@@ -13,13 +13,13 @@ import javax.persistence.ManyToOne;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class Pessoal implements Serializable{
+public class Pessoal implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue
 	private int id;
@@ -32,9 +32,9 @@ public class Pessoal implements Serializable{
 
 	private String endereco;
 	@ManyToOne(fetch = FetchType.EAGER)
-	private Estado estado;
+	private Estados estados;
 	@ManyToOne(fetch = FetchType.EAGER)
-	private Cidade cidade;
+	private Cidades cidades;
 
 	public Pessoal() {
 		// TODO Auto-generated constructor stub
@@ -88,20 +88,20 @@ public class Pessoal implements Serializable{
 		this.endereco = endereco;
 	}
 
-	public Estado getEstado() {
-		return estado;
+	public Estados getEstados() {
+		return estados;
 	}
 
-	public void setEstado(Estado estado) {
-		this.estado = estado;
+	public void setEstados(Estados estados) {
+		this.estados = estados;
 	}
 
-	public Cidade getCidade() {
-		return cidade;
+	public Cidades getCidades() {
+		return cidades;
 	}
 
-	public void setCidade(Cidade cidade) {
-		this.cidade = cidade;
+	public void setCidades(Cidades cidades) {
+		this.cidades = cidades;
 	}
 
 	@Override

@@ -1,29 +1,31 @@
 package com.livraria.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
-public class Estado {
-	
+public class Cidades {
+
 	@Id
 	@GeneratedValue
 	private int id;
 	private String nome;
-	private String sigla;
-	
-	public Estado() {
+
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
+	private Estados estados;
+
+	public Cidades() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Estado(String nome, String sigla) {
+	public Cidades(String nome) {
 		this.nome = nome;
-		this.sigla = sigla;
 	}
 
-	
-	
 	public int getId() {
 		return id;
 	}
@@ -40,12 +42,12 @@ public class Estado {
 		this.nome = nome;
 	}
 
-	public String getSigla() {
-		return sigla;
+	public Estados getEstados() {
+		return estados;
 	}
 
-	public void setSigla(String sigla) {
-		this.sigla = sigla;
+	public void setEstados(Estados estados) {
+		this.estados = estados;
 	}
 
 	@Override
@@ -64,12 +66,10 @@ public class Estado {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Estado other = (Estado) obj;
+		Cidades other = (Cidades) obj;
 		if (id != other.id)
 			return false;
 		return true;
 	}
-	
-	
-	
+
 }

@@ -10,19 +10,19 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Livro implements Serializable{
+public class Livro implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue
-	private Long id;
+	private int id;
 
 	private String titulo;
-	
+
 	private String autor;
 
 	private String descricao;
@@ -32,25 +32,104 @@ public class Livro implements Serializable{
 	private Long ano;
 
 	private Long paginas;
-	
+
 	private String valor;
 
 	@Column(columnDefinition = "text")
 	private String foto;
-	
+
 	@ManyToOne
 	private Fornecedor fornecedor;
-	
-	
+
 	public Livro() {
 		// TODO Auto-generated constructor stub
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public String getAutor() {
+		return autor;
+	}
+
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public Long getIsbn() {
+		return isbn;
+	}
+
+	public void setIsbn(Long isbn) {
+		this.isbn = isbn;
+	}
+
+	public Long getAno() {
+		return ano;
+	}
+
+	public void setAno(Long ano) {
+		this.ano = ano;
+	}
+
+	public Long getPaginas() {
+		return paginas;
+	}
+
+	public void setPaginas(Long paginas) {
+		this.paginas = paginas;
+	}
+
+	public String getValor() {
+		return valor;
+	}
+
+	public void setValor(String valor) {
+		this.valor = valor;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+	public Fornecedor getFornecedor() {
+		return fornecedor;
+	}
+
+	public void setFornecedor(Fornecedor fornecedor) {
+		this.fornecedor = fornecedor;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + id;
 		return result;
 	}
 
@@ -63,14 +142,9 @@ public class Livro implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Livro other = (Livro) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
+		if (id != other.id)
 			return false;
 		return true;
 	}
-	
-	
 
 }

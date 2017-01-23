@@ -5,20 +5,24 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Cidade {
-
+public class Estados {
+	
 	@Id
 	@GeneratedValue
 	private int id;
 	private String nome;
+	private String sigla;
 	
-	public Cidade() {
+	public Estados() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Cidade(String nome) {
+	public Estados(String nome, String sigla) {
 		this.nome = nome;
+		this.sigla = sigla;
 	}
+
+	
 	
 	public int getId() {
 		return id;
@@ -34,6 +38,14 @@ public class Cidade {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public String getSigla() {
+		return sigla;
+	}
+
+	public void setSigla(String sigla) {
+		this.sigla = sigla;
 	}
 
 	@Override
@@ -52,7 +64,7 @@ public class Cidade {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Cidade other = (Cidade) obj;
+		Estados other = (Estados) obj;
 		if (id != other.id)
 			return false;
 		return true;
