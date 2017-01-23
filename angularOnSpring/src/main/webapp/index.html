@@ -13,12 +13,23 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
-	<!-- Angular 1.6.1 -->
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+	<!-- Angular 1.5.8 -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
+	
+	
+	<!-- Imports de Modulos -->
+	<script type="text/javascript" src="modulos/modulo.js" ></script>
+	<script type="text/javascript" src="modulos/cliente/cliente-modulo.js"></script>
+	<script type="text/javascript" src="modulos/cliente/cadastro/cadastro-cliente-controller.js"></script>
+	<script type="text/javascript" src="modulos/cliente/login/login-cliente-controller.js"></script>
+	<script type="text/javascript" src="modulos/cliente/visualizar/visualiar-cliente-controller.js"></script>
+	
 </head>
-<body ng-app>
+<body ng-app="livraria">
 
-
+	<div ui-view>
+	</div>
 
 </body>
 </html>
