@@ -1,7 +1,6 @@
-angular.module("livraria.cliente").factory("clienteService", function($http) {
+angular.module("livraria.cliente").factory("clienteService", function($http, urlAPI) {
 	
 	var carregarEstados = function() {
-		console.log("aqui")
 		return $http.get("http://localhost:8080/api/ec/estados");
 	}
 	
@@ -9,9 +8,14 @@ angular.module("livraria.cliente").factory("clienteService", function($http) {
 		return $http.get("http://localhost:8080/api/ec/cidades/" + estadoID);
 	}
 	
+	var cadastrarCliente = function(cliente) {
+		return $http.post(urlAPI + "/cliente", cliente);
+	}
+	
 	return{
 		carregarEstados:carregarEstados,
-		carregarCidades:carregarCidades
+		carregarCidades:carregarCidades,
+		cadastrarCliente:cadastrarCliente
 	}
 	
 })

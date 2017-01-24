@@ -17,9 +17,7 @@ public class Cliente extends Pessoal implements Serializable{
 	private String cpf;
 	private String sexo;
 	private String interesse;
-	@Column(unique=true)
-	private String email;
-	private String senha;
+	
 
 	public Cliente() {
 		super();
@@ -49,21 +47,6 @@ public class Cliente extends Pessoal implements Serializable{
 		this.interesse = interesse;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
 	
 	
 }

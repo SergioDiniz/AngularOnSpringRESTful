@@ -16,6 +16,15 @@ angular.module('livraria.cliente').controller('CadastroClienteController', funct
 		})
 	}
 	
+	$scope.cadastrarCliente = function() {
+		clienteService.cadastrarCliente($scope.cliente).then(function(response) {
+			console.log("ok")
+			
+			$scope.cliente = null
+		}).catch(function(response) {
+			console.log("error")
+		})
+	}
 	
 	// init	
 	$scope.carregarEstados()

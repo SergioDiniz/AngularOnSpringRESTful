@@ -1,11 +1,11 @@
 <div id="form-cadastro-cliente">
-	
+	{{cliente}}
 	<div>
 		<h2 class="text-center">Ola!</h2>
 		<br /><br />
 	</div>
 	
-	<form>
+	<form ng-submit="cadastrarCliente()">
 		<div class=" row">
 			<div class="form-group col-sm-8">
 				<input type="text" ng-model="cliente.nome" class="input-lg form-control" placeholder="Nome"/>
@@ -55,3 +55,4 @@
 		</div>
 	</form>
 </div>
+

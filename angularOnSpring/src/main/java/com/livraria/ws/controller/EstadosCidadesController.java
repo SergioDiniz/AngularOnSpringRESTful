@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,6 +34,14 @@ public class EstadosCidadesController {
 	@GetMapping(value="/cidades/{estadoID}", produces=MediaType.APPLICATION_JSON_VALUE)
 	public Collection<Cidades> listCidadesPorEstado(@PathVariable Integer estadoID){
 		return cidadesRepository.getCidadesPorEstado(estadoID);
+	}
+	
+	@PostMapping(value="/estados", consumes=MediaType.APPLICATION_JSON_VALUE)
+	public Estados novaCidade(@RequestBody Estados estado){
+		Estados e = new Estados();
+		e.setNome("sergio");
+		e.setSigla("SD");
+		return estadosRepository.save(e);
 	}
 	
 }

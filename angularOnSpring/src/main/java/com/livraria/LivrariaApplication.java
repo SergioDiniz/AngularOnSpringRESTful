@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
-@ImportResource("classpath:/spring/spring-config.xml")
+
 public class LivrariaApplication {
 
 	public static void main(String[] args) {

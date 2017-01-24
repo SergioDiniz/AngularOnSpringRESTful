@@ -26,7 +26,7 @@ public class ClienteController {
 		return service.listarTodos();
 	}
 	
-	@PostMapping(value="/", consumes=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@PostMapping(value="/", consumes=MediaType.APPLICATION_JSON_VALUE)
 	public Cliente salvar(@RequestBody Cliente cliente){
 		return service.salvar(cliente);
 	}
