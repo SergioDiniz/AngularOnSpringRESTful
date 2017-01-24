@@ -1,0 +1,11 @@
+.btn-verde,
+.btn-verde-o{
+	background-color: #5BC0AA;
+	border-color: #4baf98;
+}
+
+.btn-verde-o{
+	background-color: rgba(91, 192, 170, 0);
+	color: #4baf98;
+	font-weight: 300;
+}

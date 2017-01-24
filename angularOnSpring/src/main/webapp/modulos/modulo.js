@@ -3,6 +3,6 @@ angular.module('livraria', argumentos)
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
-	$urlRouterProvider.otherwise('/');
+	$urlRouterProvider.otherwise('/cliente/login');
 	
 });

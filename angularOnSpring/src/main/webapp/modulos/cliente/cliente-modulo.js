@@ -12,7 +12,10 @@ angular.module('livraria.cliente', [])
 		.state('login-cliente', {
 			url: '/cliente/login',
 			templateUrl: "modulos/cliente/login/login-cliente-view.html",
-			css: "modulos/cliente/login/login-cliente-style.css",
+			css: {
+				href: "modulos/cliente/login/login-cliente-style.css",
+				preload: true
+			},
 			controller: "loginClienteController"
 		})
 		.state('visualizar-cliente', {
