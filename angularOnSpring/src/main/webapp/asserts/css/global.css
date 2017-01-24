@@ -1,7 +1,25 @@
 .btn-verde,
-.btn-verde-o{
+.btn-verde:HOVER,
+.btn-verde:ACTIVE,
+.btn-verde:FOCUS,
+.btn-verde:ACTIVE:FOCUS,
+.btn-verde:ACTIVE:HOVER,
+.btn-verde-o,
+.btn-verde-o:HOVER,
+.btn-verde-o:ACTIVE,
+.btn-verde-o:FOCUS,
+.btn-verde-o:ACTIVE:FOCUS,
+.btn-verde-o:ACTIVE:HOVER{
 	background-color: #5BC0AA;
 	border-color: #4baf98;
+}
+
+.btn-verde:HOVER,
+.btn-verde:ACTIVE,
+.btn-verde:FOCUS,
+.btn-verde:ACTIVE:FOCUS,
+.btn-verde:ACTIVE:HOVER{
+	background-color: #4baf98;
 }
 
 .btn-verde-o{

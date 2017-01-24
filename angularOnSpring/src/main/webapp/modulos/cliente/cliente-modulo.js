@@ -7,6 +7,9 @@ angular.module('livraria.cliente', [])
 		.state('cadastro-cliente', {
 			url: '/cliente/cadastro',
 			templateUrl: "modulos/cliente/cadastro/cadastro-cliente-view.html",
+			css: {
+				href: "modulos/cliente/cadastro/cadastro-cliente-style.css"
+			},
 			controller: "CadastroClienteController"
 		})
 		.state('login-cliente', {

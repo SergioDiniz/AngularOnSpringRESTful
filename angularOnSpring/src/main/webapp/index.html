@@ -3,6 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <title>Livraria AS</title>
+
+	<style>
+		[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+		  display: none !important;
+		}
+		
+	</style>
+
 	<!-- Bootstrap CDN -->
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -31,8 +39,9 @@
 	<script type="text/javascript" src="modulos/cliente/login/login-cliente-controller.js"></script>
 	<script type="text/javascript" src="modulos/cliente/visualizar/visualiar-cliente-controller.js"></script>
 	
+	
 </head>
-<body ng-app="livraria">
+<body ng-app="livraria" >
 
 	<div ui-view>
 	</div>
