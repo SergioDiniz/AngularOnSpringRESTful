@@ -1,4 +1,4 @@
-var argumentos = ['ui.router', 'angularCSS', 'livraria.cliente']
+var argumentos = ['ui.router', 'angularCSS', 'livraria.cliente', 'livraria.admin']
 angular.module('livraria', argumentos)
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
