@@ -8,7 +8,8 @@ angular.module('livraria.cliente', [])
 			url: '/cliente/cadastro',
 			templateUrl: "modulos/cliente/cadastro/cadastro-cliente-view.html",
 			css: {
-				href: "modulos/cliente/cadastro/cadastro-cliente-style.css"
+				href: "modulos/cliente/cadastro/cadastro-cliente-style.css",
+				preload: true
 			},
 			controller: "CadastroClienteController"
 		})

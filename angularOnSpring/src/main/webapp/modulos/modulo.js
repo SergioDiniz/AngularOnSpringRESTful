@@ -5,4 +5,5 @@ angular.module('livraria', argumentos)
 
 	$urlRouterProvider.otherwise('/cliente/login');
 	
-});
+})
+.constant("urlAPI", "http://localhost:8080/api");

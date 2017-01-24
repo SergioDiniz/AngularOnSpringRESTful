@@ -1,1 +1,57 @@
-{{nome}}
+<div id="form-cadastro-cliente">
+	
+	<div>
+		<h2 class="text-center">Ola!</h2>
+		<br /><br />
+	</div>
+	
+	<form>
+		<div class=" row">
+			<div class="form-group col-sm-8">
+				<input type="text" ng-model="cliente.nome" class="input-lg form-control" placeholder="Nome"/>
+			</div>
+			<div class="form-group col-sm-4">
+				<select class="form-control input-lg" ng-model="cliente.sexo">
+				  <option value="" disabled selected>Sexo</option>
+				  <option value="Masculino" >Masculino</option>
+				  <option value="Feminino" >Feminino</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<input type="email" ng-model="cliente.email" class="input-lg form-control" placeholder="Email"/>
+		</div>
+		<div class="form-group">
+			<input type="password" ng-model="cliente.senha" class="input-lg form-control" placeholder="Senha"/>
+		</div>
+		<div class="form-group">
+			<input type="text" ng-model="cliente.endereco" class="input-lg form-control" placeholder="Endereço"/>
+		</div>
+		<div class="row">
+			<div class="form-group  col-sm-6">
+				<select class="form-control input-lg" ng-model="cliente.estados" 
+					ng-change="carregarCidades(cliente.estados)" 
+					ng-options="estado.nome + ' - ' + estado.sigla for estado in estados">
+				  <option value="" disabled selected>Estado</option>
+				</select>
+			</div>
+			<div class="form-group  col-sm-6">
+				<select class="form-control input-lg" ng-model="cliente.cidades"
+					ng-options="cidade.nome for cidade in cidades">
+				  <option value="" disabled selected>Cidade</option>
+				</select>
+			</div>
+		</div>
+		<div class=" row">
+			<div class="form-group col-sm-6">
+				<input type="text" ng-model="cliente.cpf" class="input-lg form-control" placeholder="CPF"/>
+			</div>
+			<div class="form-group col-sm-6">
+				<input type="text" ng-model="cliente.telefone" class="input-lg form-control" placeholder="Telefone"/>
+			</div>
+		</div>
+		<div>
+			<input type="submit" value="Cadastra-se" class="btn btn-lg btn-block btn-danger btn-verde" />
+		</div>
+	</form>
+</div>
