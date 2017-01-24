@@ -1,3 +1,46 @@
 body {
-	background-color: #cc3300;
+	background-color: #F3F2EE;
 }
+
+#topo-login{
+	background-color: #fff;
+	padding: 0.5em 1.5em;
+	font-size: 2em;
+}
+
+#form-login{
+	padding-top: 7em;
+	width: 30em;
+	margin: 0 auto;
+}
+
+#form-login form{
+	
+}
+
+#form-login form input[type=email],
+#form-login form input[type=password] {
+	background-color: #eae3e1 !important
+}
+
+#form-login form input{
+	border-radius: 0;
+}
+
+#form-login form input[type=submit], 
+#sign-up button{
+	background-color: #5BC0AA;
+	border-color: #4baf98;
+}
+
+#sign-up{
+	padding-top: 1.5em;
+}
+
+#sign-up button{
+	background-color: rgba(91, 192, 170, 0);
+	color: #4baf98;
+	font-weight: 300;
+	font-size: 1.2em;
+}
+
