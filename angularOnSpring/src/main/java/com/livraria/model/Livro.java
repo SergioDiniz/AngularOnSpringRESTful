@@ -31,7 +31,7 @@ public class Livro {
 	@Column(columnDefinition = "text")
 	private String foto;
 
-	@ManyToOne
+	@ManyToOne()
 	private Fornecedor fornecedor;
 	
 	public Livro() {
