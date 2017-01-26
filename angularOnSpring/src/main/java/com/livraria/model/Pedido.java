@@ -1,5 +1,6 @@
 package com.livraria.model;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -28,7 +29,7 @@ public class Pedido {
 	private Cliente cliente;
 
 	@ManyToMany
-	private List<ItemPedido> itensPedido;
+	private List<ItemPedido> itensPedido = new ArrayList<>();
 	
 	public Pedido() {
 		// TODO Auto-generated constructor stub
