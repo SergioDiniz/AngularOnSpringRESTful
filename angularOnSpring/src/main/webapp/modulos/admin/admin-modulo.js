@@ -7,9 +7,16 @@ angular.module("livraria.admin", [])
 			url: "/admin/",
 			controller: "HomeAdminController",
 			templateUrl: "modulos/admin/home/home-admin-view.html",
-			css: {
-				href: "modulos/admin/home/home-admin-style.css"
-			}
+			css: [
+				{
+					href: "modulos/admin/home/home-admin-style.css",
+					preload: true
+				},
+				{
+					href: "asserts/css/admin.css",
+					preload: true
+				}
+			]
 		})
 	
 })
