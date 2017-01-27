@@ -1,6 +1,7 @@
 package com.livraria.ws.controller;
 
 import java.util.Collection;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.livraria.model.Cliente;
@@ -47,6 +49,14 @@ public class ClienteController {
 	@PutMapping("/")
 	public Cliente atualizarCliente(@RequestBody Cliente cliente){
 		return service.salvarCliente(cliente);
+	}
+	
+	// login
+	@PostMapping("/login")
+	public Cliente login(@RequestBody Map<String, String> json){
+		String email = json.get("email");
+		String senha = json.get("senha");
+		return service.login(email, senha);
 	}
 	
 }

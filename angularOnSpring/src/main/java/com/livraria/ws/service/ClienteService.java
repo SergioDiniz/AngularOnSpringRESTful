@@ -42,6 +42,10 @@ public class ClienteService {
 		repository.delete(id);
 	}
 		
+	// login
+	public Cliente login(String email, String senha){
+		return repository.login(email, senha);
+	}
 	
 //	@Transactional(readOnly=false, propagation=Propagation.REQUIRED)
 //	public void salvar(Cliente cliente){
