@@ -3,7 +3,7 @@ angular.module("livraria.admin").controller("CadastroLivroController", function(
 	$scope.fornecedores = []
 	
 	$scope.carregarFornecedores = function() {
-		adminService.carregarListaDeFornecedores()
+		adminService.listarTodosOsFornecedores()
 		.then(function(response) {
 			$scope.fornecedores = response.data;
 		})
