@@ -4,7 +4,7 @@ angular.module("livraria.admin", [])
 	
 	$stateProvider
 		.state('admin', {
-			url: "/admin/",
+			url: "/admin",
 			views:{
 				"home":{
 					controller: "HomeAdminController",
@@ -24,7 +24,7 @@ angular.module("livraria.admin", [])
 			
 		})
 		.state('admin.livro', {
-			url: "livro",
+			url: "/livro",
 			views: {
 				'adminhome':{
 					controller: "LivroHomeController",
@@ -32,23 +32,58 @@ angular.module("livraria.admin", [])
 					css: [
 						{
 							href: "asserts/css/admin.css",
-							preload: "true"
+							preload: true
 						}
 					]
 				}
 			}
 			
 		})
-		.state('admin-livro-novo', {
-			url: "/admin/livro/novo/",
-			controller: "CadastroLivroController",
-			templateUrl: "modulos/admin/livro-cadastro/cadastro-livro-view.html",
-			css:[
-				{
-					href: "asserts/css/admin.css",
-					preload: true
+		.state('admin.livro-novo', {
+			url: "/livro/novo",
+			views: {
+				"adminhome": {
+					controller: "CadastroLivroController",
+					templateUrl: "modulos/admin/livro-cadastro/cadastro-livro-view.html",
+					css: [
+						{
+							href: "asserts/css/admin.css",
+							preload: true
+						}
+					]
 				}
-			]
+			}
+			
+		})
+		.state('admin.fornecedor', {
+			url: "/fornecedor", 
+			views: {
+				"adminhome":{
+					templateUrl: "modulos/admin/fornecedor-home/fornecedor-home-view.html",
+					controller: "FornecedorHomeController",
+					css: [
+						{
+							href: "asserts/css/admin.css",
+							preload: true
+						}
+					]
+				}
+			}
+		})
+		.state('admin.fornecedor-novo', {
+			url: "/fornecedor/novo",
+			views: {
+				"adminhome":{
+					templateUrl: "modulos/admin/fornecedor-cadastro/fornecedor-cadastro-view.html",
+					controller: "FornecedorCadastroController",
+					css: [
+						{
+							href: "asserts/css/admin.css",
+							preload: true
+						}
+					]
+				}
+			}
 		})
 	
 })
