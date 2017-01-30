@@ -1,1 +1,57 @@
-pagina cadastro livro: {{livro}}
+<div>
+livro: {{livro}}
+</div>
+<div class="col-sm-offset-3 col-sm-6" ng-init="carregarFornecedores()">
+	<form ng-submit="cadastrarLivro()">
+		<div class="form-group">
+			<label for="titulo">Titulo do Livro:</label>
+			<input type="text" ng-model="livro.titulo" class="form-control input-lg" id="titulo" />
+		</div>
+		<div class="form-group">
+			<label for="autor">Autor do Livro:</label>
+			<input type="text" ng-model="livro.autor" class="form-control input-lg" id="autor" />
+		</div>
+		<div class="form-group">
+			<label for="descricao">Descrição:</label>
+			<textarea rows="5" ng-model="livro.descricao" class="form-control" id="descricao"></textarea>
+		</div>
+		<div class="form-group">
+			<label for="isbn">ISBN:</label>
+			<input type="number" ng-model="livro.isbn" class="form-control input-lg" id="isbn" />
+		</div>
+		<div class="form-group">
+			<label for="ano">Ano:</label>
+			<input type="number" ng-model="livro.ano" class="form-control input-lg" id="ano" />
+		</div>
+		<div class="form-group">
+			<label for="paginas">Numero de Paginas:</label>
+			<input type="number" ng-model="livro.paginas" class="form-control input-lg" id="paginas" />
+		</div>
+		<div class="form-group">
+			<label for="valor">Valor R$:</label>
+			<input type="text" ng-model="livro.valor" class="form-control input-lg" id="valor" />
+		</div>
+		<div class="form-group">
+			<label for="fornecedor">Fornecedor:</label>
+			<select class="form-control input-lg"
+					ng-model="livro.fornecedor"
+					ng-options="f.nome for f in fornecedores">
+				<option value="" disabled selected> -- Selecione -- </option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="foto">Capa do Livro:</label>
+			<input type="file" ng-model="livro.foto" class="form-control input-lg" id="foto" />
+		</div>
+		
+		<div class="text-center">
+			<br />
+			<input type="submit" class="btn btn-primary btn-verde btn-lg" value="Cadastrar Livro" />
+		</div>
+	</form>
+
+<br />
+<br />
+<br />
+</div>
+
