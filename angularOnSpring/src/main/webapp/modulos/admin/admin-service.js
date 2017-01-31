@@ -14,7 +14,11 @@ angular.module("livraria.admin").factory("adminService", function($http, urlAPI)
 	var excluirLivro = function(id) {
 		return $http.delete(urlAPI + "/livro/" + id)
 	}
-	// visualizar fornecedor
+	
+	// visualizar livro
+	var pesquisarLivro = function(id){
+		return $http.get(urlAPI + "/livro/" + id)
+	}
 	
 	// atualizar livro
 	
@@ -42,6 +46,7 @@ angular.module("livraria.admin").factory("adminService", function($http, urlAPI)
 		cadastrarNovoLivro:cadastrarNovoLivro,
 		listarTodosOsLivros:listarTodosOsLivros,
 		excluirLivro:excluirLivro,
+		pesquisarLivro:pesquisarLivro,
 		listarTodosOsFornecedores:listarTodosOsFornecedores
 	}
 	

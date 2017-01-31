@@ -55,6 +55,19 @@ angular.module("livraria.admin", [])
 			}
 			
 		})
+		.state('admin.visualizar-livro', {
+			url: "/livro/:livroId",
+			views: {
+				"adminhome":{
+					controller: "VisualizarAtualizarLivroController",
+					templateUrl: "modulos/admin/livro-visualizar-atualizar/visualizar-atualizar-livro-view.html",
+					css: [{
+						href: "asserts/css/admin.css",
+						preload: true
+					}]
+				}
+			}
+		})
 		.state('admin.fornecedor', {
 			url: "/fornecedor", 
 			views: {
