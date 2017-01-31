@@ -1,2 +1,40 @@
-fornecedor home = {{fornecedor}}
-<a ui-sref="admin.fornecedor-novo">novo fornecedor</a>
+<div class="container">
+	<div class="text-center">
+		<h1>Lista de Fornecedores</h1>
+	</div>
+
+	<div class="text-right">
+		<h3><a ui-sref="admin.fornecedor-novo">novo fornecedor</a></h3>
+	</div>
+	
+	<div>
+		<table class="table table-hover" ng-init="carregarFornecedores()">
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Razão S.</th>
+					<th>CNPJ</th>
+					<th>Endereço</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="fornecedor in fornecedores">
+					<td>{{fornecedor.nome}}</td>
+					<td>{{fornecedor.razaoSocial}}</td>
+					<td>{{forneceodr.cnpj}}</td>
+					<td>{{fornecedor.cidades.nome + ' - ' + fornecedor.estados.sigla}}</td>
+					<td>
+						<button class="btn btn-xs btn-default">
+							<span class="glyphicon glyphicon-trash"></span>
+						</button>
+						<button class="btn btn-xs btn-default">
+							<span class="glyphicon glyphicon-eye-open"></span>
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+</div>
