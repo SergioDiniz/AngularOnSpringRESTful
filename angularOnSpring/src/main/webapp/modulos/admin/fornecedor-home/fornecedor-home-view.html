@@ -25,7 +25,7 @@
 					<td>{{forneceodr.cnpj}}</td>
 					<td>{{fornecedor.cidades.nome + ' - ' + fornecedor.estados.sigla}}</td>
 					<td>
-						<button class="btn btn-xs btn-default">
+						<button ng-click="excluirFornecedor(fornecedor)" class="btn btn-xs btn-default">
 							<span class="glyphicon glyphicon-trash"></span>
 						</button>
 						<button class="btn btn-xs btn-default">
