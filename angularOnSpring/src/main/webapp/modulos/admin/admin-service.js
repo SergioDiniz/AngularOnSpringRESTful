@@ -28,6 +28,9 @@ angular.module("livraria.admin").factory("adminService", function($http, urlAPI)
 	
 	// Fornecedor:
 	// cadastrar fornecedor
+	var cadastrarFornecedor = function(fornecedor) {
+		return $http.post(urlAPI + "/fornecedor/", fornecedor)
+	}
 	
 	//listar
 	var listarTodosOsFornecedores = function() {
@@ -35,11 +38,19 @@ angular.module("livraria.admin").factory("adminService", function($http, urlAPI)
 	}
 	
 	// deleter fornecedor
-
+	var excluirFornecedor = function(id) {
+		return $http.delete(urlAPI + "/fornecedor/" + id)
+	}
+	
 	// visualizar fornecedor
+	var pesquisarFornecedor = function(id) {
+		return $http.get(urlAPI + "/fornecedor/"+id)
+	}
 	
 	// atualizar fornecedor
-	
+	var atualizarFornecedor = function(fornecedor) {
+		return $http.put(urlAPI + "/fornecedor/", fornecedor)
+	}
 
 	
 	
@@ -50,7 +61,12 @@ angular.module("livraria.admin").factory("adminService", function($http, urlAPI)
 		excluirLivro:excluirLivro,
 		pesquisarLivro:pesquisarLivro,
 		atualizarLivro:atualizarLivro,
-		listarTodosOsFornecedores:listarTodosOsFornecedores
+		
+		cadastrarFornecedor:cadastrarFornecedor,
+		listarTodosOsFornecedores:listarTodosOsFornecedores,
+		excluirFornecedor:excluirFornecedor,
+		pesquisarFornecedor:pesquisarFornecedor,
+		atualizarFornecedor
 	}
 	
 })
