@@ -21,7 +21,9 @@ angular.module("livraria.admin").factory("adminService", function($http, urlAPI)
 	}
 	
 	// atualizar livro
-	
+	var atualizarLivro = function(livro) {
+		return $http.put(urlAPI + "/livro/", livro)
+	}
 	
 	
 	// Fornecedor:
@@ -47,6 +49,7 @@ angular.module("livraria.admin").factory("adminService", function($http, urlAPI)
 		listarTodosOsLivros:listarTodosOsLivros,
 		excluirLivro:excluirLivro,
 		pesquisarLivro:pesquisarLivro,
+		atualizarLivro:atualizarLivro,
 		listarTodosOsFornecedores:listarTodosOsFornecedores
 	}
 	

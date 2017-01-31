@@ -29,4 +29,13 @@ angular.module("livraria.admin").controller("VisualizarAtualizarLivroController"
 		})
 	}
 	
+	$scope.atualizarLivro = function() {
+		adminService.atualizarLivro($scope.livro)
+		.then(function(response) {
+			alert("Livro Atualizado com Sucesso!")
+		}).catch(function(response) {
+			alert("ERROR! " + response.data.error + " (" + response.data.status + ")")
+		})
+	}
+	
 })
