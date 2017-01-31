@@ -16,6 +16,16 @@ angular.module("livraria.admin").controller("VisualizarAtualizarFornecedorContro
 		})
 	}
 	
+	$scope.atualizarFornecedor = function() {
+		adminService.atualizarFornecedor($scope.fornecedor)
+		.then(function(response) {
+			alert("Funcionario Atualizado com Sucesso!")
+		}).catch(function(response) {
+			alert("ERROR! " + response.data.error)
+		})
+	}
+	
+	
 	$scope.carregarEstados = function() {
 		 clienteService.carregarEstados()
 		 .then(function(response) {
