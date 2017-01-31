@@ -1,0 +1,75 @@
+<div class="text-center" ng-if="fornecedor == null">
+	<h1>{{mensagem}}</h1>
+</div>
+
+<div class="col-sm-offset-3 col-sm-6" ng-init="pesquisarFornecedor()">
+	
+	<div class="text-center">
+		<h1>Novo Fornecedor</h1>
+		<br />
+	</div>
+
+	<form ng-submit="atualizarFornecedor()" ng-init="carregarEstados()">
+		<div class="form-group">
+			<label for="nome">Nome:</label>
+			<input type="text" ng-model="fornecedor.nome" id="nome" class="form-control input-lg" />
+		</div>
+		<div class="form-group">
+			<label for="razaos">Razão Social:</label>
+			<input type="text" ng-model="fornecedor.razaoSocial" id="razaos" class="form-control input-lg"  />
+		</div>
+		<div class="row">
+			<div class="form-group col-sm-6">
+				<label for="cnpj">CNPJ:</label>
+				<input type="text" ng-model="fornecedor.cnpj" id="cnpj" class="form-control input-lg"  />
+			</div>
+			<div class="form-group col-sm-6">
+				<label for="inscricaoEstadual">Inscrição Estadual:</label>
+				<input type="text" ng-model="fornecedor.inscricaoEstadual" id="inscricaoEstadual" class="form-control input-lg"  />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="telefone">Telefone:</label>
+			<input type="text" ng-model="fornecedor.telefone" id="telefone" class="form-control input-lg" />
+		</div>
+		<div class="form-group">
+			<label for="endereco">Endereço:</label>
+			<input type="text" ng-model="fornecedor.endereco" id="endereco" class="form-control input-lg" />
+		</div>
+		<div class="row">
+			<div class="form-group col-sm-6">
+				<label for="estado">Estado:</label>
+				<select id="estado" class="form-control input-lg"
+					ng-model="fornecedor.estados"
+					ng-options="e.nome + ' - ' + e.sigla for e in estados track by e.id"
+					ng-change="carregarCidades(fornecedor.estados)"
+					>
+					<option value="" selected disabled > -- Selecione --</option>
+				</select>
+			</div>
+			<div class="form-group col-sm-6">
+				<label for="cidade">Cidade:</label>
+				<select id="cidade" class="form-control input-lg"
+					ng-model="fornecedor.cidades"
+					ng-options="c.nome for c in cidades track by c.id"
+					>
+					<option value="" disabled selected> -- Selecione --</option>
+				</select>
+			</div>
+		</div>
+		<div>
+			<label for="foto">Foto:</label>
+			<input type="file" ng-model="fornecedor.foto" class="form-control input-lg" id="foto" />
+		</div>
+		
+		<div class="text-center">
+		<br />
+			<input type="submit"  value="Atualizar Fornecedor" class="btn btn-primary btn-verde btn-lg" />
+		</div>
+	</form>
+<br />
+<br />
+<br />
+
+
+</div>

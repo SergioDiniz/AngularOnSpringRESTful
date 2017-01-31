@@ -98,5 +98,18 @@ angular.module("livraria.admin", [])
 				}
 			}
 		})
+		.state('admin.visualizar-fornecedor', {
+			url: '/fornecedor/:fornecedorId',
+			views:{
+				"adminhome":{
+					controller: "VisualizarAtualizarFornecedorController",
+					templateUrl: "modulos/admin/fornecedor-visualizar-atualizar/atualizar-visualizar-fornecedor-view.html",
+					css: [{
+							href: "asserts/css/admin.css",
+							preload: true
+					}]
+				}
+			}
+		})
 	
 })

@@ -22,13 +22,13 @@
 				<tr ng-repeat="fornecedor in fornecedores">
 					<td>{{fornecedor.nome}}</td>
 					<td>{{fornecedor.razaoSocial}}</td>
-					<td>{{forneceodr.cnpj}}</td>
+					<td>{{fornecedor.cnpj}}</td>
 					<td>{{fornecedor.cidades.nome + ' - ' + fornecedor.estados.sigla}}</td>
 					<td>
 						<button ng-click="excluirFornecedor(fornecedor)" class="btn btn-xs btn-default">
 							<span class="glyphicon glyphicon-trash"></span>
 						</button>
-						<button class="btn btn-xs btn-default">
+						<button ui-sref="admin.visualizar-fornecedor({fornecedorId: fornecedor.id})" class="btn btn-xs btn-default">
 							<span class="glyphicon glyphicon-eye-open"></span>
 						</button>
 					</td>
