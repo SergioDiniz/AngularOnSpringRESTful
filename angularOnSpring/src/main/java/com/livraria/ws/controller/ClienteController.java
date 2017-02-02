@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -61,6 +62,11 @@ public class ClienteController {
 		String email = json.get("email");
 		String senha = json.get("senha");
 		return service.login(email, senha);
+	}
+	
+	@GetMapping("/logado")
+	public Cliente clienteLogado(@RequestHeader(value="Authorization") String token){
+		return service.clienteLogado(token);
 	}
 	
 }

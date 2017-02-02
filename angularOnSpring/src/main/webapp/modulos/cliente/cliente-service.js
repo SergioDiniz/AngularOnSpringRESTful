@@ -12,10 +12,21 @@ angular.module("livraria.cliente").factory("clienteService", function($http, url
 		return $http.post(urlAPI + "/cliente/", cliente);
 	}
 	
+	var loginCliente = function(cliente){
+		return $http.post(urlAPI + "/cliente/login", cliente);
+	}
+	
+	var clienteLogado = function() {
+		return $http.get(urlAPI + "/cliente/logado")
+	}
+	
+	
 	return{
 		carregarEstados:carregarEstados,
 		carregarCidades:carregarCidades,
-		cadastrarCliente:cadastrarCliente
+		cadastrarCliente:cadastrarCliente,
+		loginCliente:loginCliente,
+		clienteLogado:clienteLogado
 	}
 	
 })

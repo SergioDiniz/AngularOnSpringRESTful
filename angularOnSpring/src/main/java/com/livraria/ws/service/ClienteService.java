@@ -64,10 +64,19 @@ public class ClienteService {
 		
 		String token = ManagerJWT.createJWT(cliente.getId(), cliente.getNome());
 		
-		ClienteLoginResponse clr = new ClienteLoginResponse(cliente.getNome(), token);
+		ClienteLoginResponse clr = new ClienteLoginResponse(cliente.getEmail(), token);
 		
-		return new ResponseEntity<ClienteLoginResponse>(clr, HttpStatus.ACCEPTED);
+		return new ResponseEntity<ClienteLoginResponse>(clr, HttpStatus.CREATED);
 	}
+	
+	
+	public Cliente clienteLogado(String token){
+		Integer clienteId = Integer.parseInt(ManagerJWT.decodeJWT(token).getId());
+		Cliente cliente = repository.findOne(clienteId);
+		cliente.setSenha(null);
+		return cliente;
+	}
+	
 	
 //	@Transactional(readOnly=false, propagation=Propagation.REQUIRED)
 //	public void salvar(Cliente cliente){
