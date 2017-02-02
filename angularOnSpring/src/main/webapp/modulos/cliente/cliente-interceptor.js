@@ -1,8 +1,11 @@
-angular.module("livraria.cliente").factory("clienteInterceptor", function($q) {
+angular.module("livraria.cliente").factory("clienteInterceptor", function($q, $location) {
 	
 	return {
 		'request': function(config){
-			config.headers.Authorization = localStorage.getItem("session_token");
+//			console.log("passando pelo request")
+			var token = localStorage.getItem("session_token")
+			
+			config.headers.Authorization = token
 			return config;
 		},
 		

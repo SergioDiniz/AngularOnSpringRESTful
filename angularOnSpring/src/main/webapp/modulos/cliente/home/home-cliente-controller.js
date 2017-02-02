@@ -1,4 +1,4 @@
-angular.module("livraria.cliente").controller("HomeClienteController", function($scope, $rootScope, clienteService) {
+angular.module("livraria.cliente").controller("HomeClienteController", function($state, $scope, $rootScope, $location, clienteService) {
 	
 	var clienteLogado = function() {
 		clienteService.clienteLogado()
@@ -9,7 +9,7 @@ angular.module("livraria.cliente").controller("HomeClienteController", function(
 	
 	clienteLogado()
 	
-		
-		
+	$scope.$route = $location
+							  
 	
 })

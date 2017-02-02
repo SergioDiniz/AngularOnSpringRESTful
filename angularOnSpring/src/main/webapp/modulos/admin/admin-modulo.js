@@ -2,6 +2,8 @@ angular.module("livraria.admin", [])
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 	
+	
+	
 	$stateProvider
 		.state('admin', {
 			url: "/admin",

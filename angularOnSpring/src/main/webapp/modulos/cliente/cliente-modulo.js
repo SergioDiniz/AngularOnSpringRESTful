@@ -3,7 +3,10 @@ angular.module('livraria.cliente', [])
 .config(function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 	
 	$httpProvider.interceptors.push('clienteInterceptor');
-
+	
+	
+	
+	
 	$stateProvider
 		.state('cadastro-cliente', {
 			url: '/cliente/cadastro',
@@ -43,4 +46,34 @@ angular.module('livraria.cliente', [])
 				
 		
 		
+})
+.run(function($rootScope, $location) {
+	
+	$rootScope.$on('$locationChangeStart', function() {
+		
+		console.log("executanto o run")
+		
+		var token = localStorage.getItem("session_token")
+		var rotasBloqueadasClienteLogado = ['/cliente/login', '/cliente/cadastro']
+		
+		
+		if(token == null){
+			
+			if($location.path() == '/cliente/cadastro'){
+				$location.path("/cliente/cadastro")
+			} else {
+				$location.path("/cliente/login")
+			}
+			
+			
+		}
+		else if(token != null && rotasBloqueadasClienteLogado.indexOf($location.path()) != -1){
+			console.log("usuario logado tentando acessar pagina de login ou cadastro")
+			$location.path("/cliente")
+		}
+		
+		
+		
+	})
+	
 })

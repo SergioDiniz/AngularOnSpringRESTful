@@ -4,7 +4,7 @@ angular.module('livraria.cliente').controller('loginClienteController', function
 	
 	setTimeout(function(){
 		document.getElementById("hiddenDiv").style.display = 'block';
-	}, 100);
+	}, 0);
 	
 	
 	$scope.fazerLogin = function() {
