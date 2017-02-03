@@ -42,7 +42,7 @@ angular.module('livraria.cliente', [])
 					templateUrl: "modulos/cliente/home/home-cliente-view.html",
 					css: [
 						{
-							href: "asserts/css/admin.css",
+							href: "asserts/css/cliente.css",
 							preload: true
 						}
 					]

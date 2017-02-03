@@ -1,0 +1,36 @@
+.menu-cliente-lateral{
+	height: 100%;
+	padding-bottom: 2em;
+}
+
+.menu-cliente-lateral #logo-livraria{
+	font-size: 2.5em;
+	font-weight: 100;
+    padding: 0.8em 0;
+}
+
+.menu-cliente-lateral div{
+	padding: 0em 1em;
+}
+
+.menu-cliente-lateral div button{
+	text-align: left;
+	border: 0;
+}
+
+.menu-cliente-lateral div button .texto{
+	padding-left: 1em;
+}
+
+.menu-cliente-lateral .glyphicon{
+	color: #bbb7b7;
+}
+
+.menu-cliente-topo{
+	padding: 1.5em 1em;
+	border-bottom: 1px solid #dedddd;
+}
+
+.glyphicon{
+	top: 3px;
+}
