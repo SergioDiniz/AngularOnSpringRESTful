@@ -8,7 +8,7 @@
 	</div>
 	<div>
 		<button class="btn btn-lg btn-default btn-block" ui-sref="admin">
-			<span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> <span class="texto">Home</span>
+			<span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> <span class="texto">Inicio</span>
 		</button>
 	</div>
 	<div>
@@ -22,7 +22,7 @@
 		</button>
 	</div>
 	<div>
-		<button class="btn btn-lg btn-default btn-block" ui-sref="admin.configuracoes">
+		<button ng-click="encerrarSessao()" class="btn btn-lg btn-default btn-block" ui-sref="login-cliente">
 			<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> <span class="texto">Sair</span>
 		</button>
 	</div>

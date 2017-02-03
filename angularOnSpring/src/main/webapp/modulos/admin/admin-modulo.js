@@ -34,7 +34,6 @@ angular.module("livraria.admin", [])
 					css: [
 						{
 							href: "asserts/css/admin.css",
-							preload: true
 						}
 					]
 				}
@@ -50,7 +49,6 @@ angular.module("livraria.admin", [])
 					css: [
 						{
 							href: "asserts/css/admin.css",
-							preload: true
 						}
 					]
 				}
@@ -65,7 +63,6 @@ angular.module("livraria.admin", [])
 					templateUrl: "modulos/admin/livro-visualizar-atualizar/visualizar-atualizar-livro-view.html",
 					css: [{
 						href: "asserts/css/admin.css",
-						preload: true
 					}]
 				}
 			}
@@ -79,7 +76,6 @@ angular.module("livraria.admin", [])
 					css: [
 						{
 							href: "asserts/css/admin.css",
-							preload: true
 						}
 					]
 				}
@@ -94,7 +90,6 @@ angular.module("livraria.admin", [])
 					css: [
 						{
 							href: "asserts/css/admin.css",
-							preload: true
 						}
 					]
 				}
@@ -108,7 +103,6 @@ angular.module("livraria.admin", [])
 					templateUrl: "modulos/admin/fornecedor-visualizar-atualizar/atualizar-visualizar-fornecedor-view.html",
 					css: [{
 							href: "asserts/css/admin.css",
-							preload: true
 					}]
 				}
 			}

@@ -28,7 +28,6 @@ angular.module('livraria.cliente', [])
 					templateUrl: "modulos/cliente/login/login-cliente-view.html",
 					css: {
 						href: "modulos/cliente/login/login-cliente-style.css",
-						preload: true
 					},
 					controller: "loginClienteController"
 				}
@@ -44,6 +43,18 @@ angular.module('livraria.cliente', [])
 						{
 							href: "asserts/css/cliente.css",
 							preload: true
+						}
+					]
+				},
+				'clientehome@cliente':{
+					controller : "LivroClienteController",
+					templateUrl: "modulos/cliente/livro/lista-livro-view.html",
+					css: [
+						{
+							href: "asserts/css/cliente.css",
+						},
+						{
+							href: "modulos/cliente/livro/lista-livro-style.css",
 						}
 					]
 				}
