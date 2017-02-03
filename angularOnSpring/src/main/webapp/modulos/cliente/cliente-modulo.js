@@ -39,7 +39,13 @@ angular.module('livraria.cliente', [])
 			views: {
 				'home':{
 					controller : "HomeClienteController",
-					templateUrl: "modulos/cliente/home/home-cliente-view.html"
+					templateUrl: "modulos/cliente/home/home-cliente-view.html",
+					css: [
+						{
+							href: "asserts/css/admin.css",
+							preload: true
+						}
+					]
 				}
 			}
 		})

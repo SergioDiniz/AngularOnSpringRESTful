@@ -20,13 +20,18 @@ angular.module("livraria.cliente").factory("clienteService", function($http, url
 		return $http.get(urlAPI + "/cliente/logado")
 	}
 	
+	var encerrarSessao = function() {
+		localStorage.removeItem("session_token")
+	}
+	
 	
 	return{
 		carregarEstados:carregarEstados,
 		carregarCidades:carregarCidades,
 		cadastrarCliente:cadastrarCliente,
 		loginCliente:loginCliente,
-		clienteLogado:clienteLogado
+		clienteLogado:clienteLogado,
+		encerrarSessao:encerrarSessao
 	}
 	
 })

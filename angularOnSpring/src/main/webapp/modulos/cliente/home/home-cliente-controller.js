@@ -10,6 +10,10 @@ angular.module("livraria.cliente").controller("HomeClienteController", function(
 	clienteLogado()
 	
 	$scope.$route = $location
-							  
+	
+	
+	$scope.encerrarSessao = function(){
+		clienteService.encerrarSessao();
+	}
 	
 })
