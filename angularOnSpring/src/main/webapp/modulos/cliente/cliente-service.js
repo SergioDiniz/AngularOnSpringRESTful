@@ -1,4 +1,4 @@
-angular.module("livraria.cliente").factory("clienteService", function($http, urlAPI) {
+angular.module("livraria.cliente").factory("clienteService", function($http, $rootScope, urlAPI) {
 	
 	var carregarEstados = function() {
 		return $http.get("http://localhost:8080/api/ec/estados");
@@ -28,6 +28,46 @@ angular.module("livraria.cliente").factory("clienteService", function($http, url
 		return $http.get(urlAPI + '/livro/')
 	}
 	
+	var getCarrinho = function(){
+		var carrinho = JSON.parse(localStorage.getItem("carrinho"))
+		if (carrinho == null){
+			carrinho = []
+		}
+		return carrinho
+	}
+	
+	var setCarrinho = function(carrinho) {
+		localStorage.setItem("carrinho", JSON.stringify(carrinho))
+	}
+	
+	var setItemCarrinho = function(item) {
+		var itemProduto = {'item': item, 'quantidade': 1}
+		var carrinho = getCarrinho()
+		carrinho.push(itemProduto)
+		setCarrinho(carrinho)
+		
+		$rootScope.numeroDeItensCarrinho = carrinho.length
+	}
+	
+	var setQuantidadeEmItemProduto = function(indexItem) {
+		var carrinho = getCarrinho()
+		carrinho[indexItem].quantidade += 1
+		setCarrinho(carrinho)
+	}
+	
+	var adicionarItemNoCarrinho = function(item) {
+		
+		var indexExisteItem = getCarrinho().findIndex(function(currentValue) {
+			return currentValue.item.id === item.id
+		})
+		
+		if(indexExisteItem == -1){
+			setItemCarrinho(item)
+		} else{
+			setQuantidadeEmItemProduto(indexExisteItem)
+		}
+		
+	}
 	
 	return{
 		carregarEstados:carregarEstados,
@@ -36,7 +76,12 @@ angular.module("livraria.cliente").factory("clienteService", function($http, url
 		loginCliente:loginCliente,
 		clienteLogado:clienteLogado,
 		encerrarSessao:encerrarSessao,
-		carregarLivros:carregarLivros
+		carregarLivros:carregarLivros,
+		getCarrinho:getCarrinho,
+		setCarrinho:setCarrinho,
+		setItemCarrinho:setItemCarrinho,
+		setQuantidadeEmItemProduto:setQuantidadeEmItemProduto,
+		adicionarItemNoCarrinho:adicionarItemNoCarrinho
 	}
 	
 })
