@@ -34,3 +34,12 @@
 .glyphicon{
 	top: 3px;
 }
+
+.carrinho table tr td{
+	vertical-align: middle !important;
+}
+
+.carrinho table tr td:NTH-CHILD(2){
+	vertical-align: top !important;
+}
+

@@ -1,4 +1,4 @@
-<div class="col-sm-12">
+<div class="carrinho col-sm-12">
 
 	<div class="text-center">
 		<br />
@@ -6,20 +6,43 @@
 		<br /><br />
 	</div>
 	
-	<div>
+	<div class="col-sm-12">
 		<table class="table" style="background-color: #fff">
 			<thead>
 				<tr>
-					<th>Produto</th>
-					<th>Quantidade</th>
-					<th>Total</th>
+					<th>Produto(s)</th>
+					<th></th>
+					<th class="text-center">Quantidade</th>
+					<th class="text-center">Total</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr ng-repeat="produto in carrinho">
-					<td>{{produto.item.titulo}}</td>
-					<td>{{produto.quantidade}}</td>
-					<td>{{getValorTotal(produto.item.valor, produto.quantidade)}}</td>
+					<td  style="width: 70px !important">
+						<img ng-src="{{produto.item.foto}}" width="100%" alt="" />
+					</td>
+					<td>
+						<section>
+							<b>{{produto.item.titulo}}</b>
+						</section>
+						<section>
+							<small>
+								{{produto.item.autor}}
+							</small>
+						</section>
+						<section>
+							<br />
+							<b>
+								R$: {{produto.item.valor}}
+							</b>
+						</section>
+					</td>
+					<td width="150px" >
+						<input type="number" ng-change="almentarQuantidade($index, produto)" ng-model="produto.quantidade" class="form-control input-lg text-center"/>
+					</td>
+					<td width="150px" class="text-center">
+						{{getValorTotal(produto.item.valor, produto.quantidade)}}
+					</td>
 				</tr>
 			</tbody>
 		</table>

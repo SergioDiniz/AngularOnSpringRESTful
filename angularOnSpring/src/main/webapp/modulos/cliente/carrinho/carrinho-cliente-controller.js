@@ -4,4 +4,8 @@ angular.module("livraria.cliente").controller("CarrinhoClienteController", funct
 	$scope.getValorTotal = function(valor, quantidade) {
 		return quantidade * parseFloat(valor)
 	}
+	
+	$scope.almentarQuantidade = function(indexItem, produto) {
+		clienteService.alterarQuantidadeEmProduto(indexItem, produto)
+	}
 })

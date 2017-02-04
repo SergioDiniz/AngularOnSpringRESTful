@@ -69,6 +69,12 @@ angular.module("livraria.cliente").factory("clienteService", function($http, $ro
 		
 	}
 	
+	var alterarQuantidadeEmProduto = function(indexItem, produto) {
+		var carrinho = getCarrinho()
+		carrinho[indexItem].quantidade = produto.quantidade
+		setCarrinho(carrinho)
+	}
+	
 	return{
 		carregarEstados:carregarEstados,
 		carregarCidades:carregarCidades,
@@ -81,7 +87,8 @@ angular.module("livraria.cliente").factory("clienteService", function($http, $ro
 		setCarrinho:setCarrinho,
 		setItemCarrinho:setItemCarrinho,
 		setQuantidadeEmItemProduto:setQuantidadeEmItemProduto,
-		adicionarItemNoCarrinho:adicionarItemNoCarrinho
+		adicionarItemNoCarrinho:adicionarItemNoCarrinho,
+		alterarQuantidadeEmProduto:alterarQuantidadeEmProduto
 	}
 	
 })
