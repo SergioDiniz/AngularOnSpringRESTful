@@ -1,4 +1,4 @@
-angular.module("livraria.cliente").controller("LivroClienteController", function($scope, $rootScope, clienteService) {
+angular.module("livraria.cliente").controller("LivroClienteController", function($scope, $rootScope, $location, clienteService) {
 	
 	$scope.carregarLivros = function() {
 		clienteService.carregarLivros()
@@ -39,7 +39,7 @@ angular.module("livraria.cliente").controller("LivroClienteController", function
 		
 		
 		
-		
+		$location.path("/cliente/carrinho")
 		
 		
 		
