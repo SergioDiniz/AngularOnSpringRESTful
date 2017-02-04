@@ -1,1 +1,28 @@
-pagina de carrinho: {{carrinho}}
+<div class="col-sm-12">
+
+	<div class="text-center">
+		<br />
+		<h1>Meu Carrinho <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> </h1>
+		<br /><br />
+	</div>
+	
+	<div>
+		<table class="table" style="background-color: #fff">
+			<thead>
+				<tr>
+					<th>Produto</th>
+					<th>Quantidade</th>
+					<th>Total</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="produto in carrinho">
+					<td>{{produto.item.titulo}}</td>
+					<td>{{produto.quantidade}}</td>
+					<td>{{getValorTotal(produto.item.valor, produto.quantidade)}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+</div>
