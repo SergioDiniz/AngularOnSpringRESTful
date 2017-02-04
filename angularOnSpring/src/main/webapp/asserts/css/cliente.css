@@ -43,3 +43,25 @@
 	vertical-align: top !important;
 }
 
+
+@media (max-width: 999px) {
+  .container {
+    width: 100%;
+  }
+}
+@media (min-width: 1000px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 1150px) {
+  .container {
+    width: 900px;
+  }
+}
+@media (min-width: 1250px) {
+  .container {
+    width: 1000px;
+  }
+}
+
