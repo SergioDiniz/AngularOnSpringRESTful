@@ -24,6 +24,10 @@ angular.module("livraria.cliente").factory("clienteService", function($http, url
 		localStorage.removeItem("session_token")
 	}
 	
+	var carregarLivros = function() {
+		return $http.get(urlAPI + '/livro/')
+	}
+	
 	
 	return{
 		carregarEstados:carregarEstados,
@@ -31,7 +35,8 @@ angular.module("livraria.cliente").factory("clienteService", function($http, url
 		cadastrarCliente:cadastrarCliente,
 		loginCliente:loginCliente,
 		clienteLogado:clienteLogado,
-		encerrarSessao:encerrarSessao
+		encerrarSessao:encerrarSessao,
+		carregarLivros:carregarLivros
 	}
 	
 })

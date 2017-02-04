@@ -9,11 +9,11 @@ angular.module("livraria.cliente").controller("HomeClienteController", function(
 	
 	clienteLogado()
 	
-	$scope.$route = $location
-	
-	
 	$scope.encerrarSessao = function(){
 		clienteService.encerrarSessao();
 	}
+	
+	var carrinho = JSON.parse(localStorage.getItem("carrinho"))
+	$rootScope.numeroDeItensCarrinho = carrinho ? carrinho.length : 0
 	
 })

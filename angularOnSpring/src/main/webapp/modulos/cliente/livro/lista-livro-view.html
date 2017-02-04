@@ -4,7 +4,7 @@
 	</div>
 	<div >
 		<div class="col-sm-2">
-			Total de livros: <b>50</b>
+			Total de livros: <b>{{livros.length}}</b>
 		</div>
 		<div class="col-sm-6 text-center">
 			pesquisar		
@@ -17,130 +17,39 @@
 			<a href="">Romance</a>
 		</div>
 	</div>
-	<div class="col-sm-12 lista-livro flex-container flex-row flex-wrap">
-		<div class="container-livro flex-container flex-column">
+	<div class="col-sm-12 lista-livro flex-container flex-row flex-wrap" ng-init="carregarLivros()">
+		<div class="container-livro flex-container flex-column" ng-repeat="livro in livros">
 			<div class="flex-container flex-row">
 				<div class="pull-left"">
-					<img src="https://suckerforvampires.files.wordpress.com/2009/08/capa-do-livro-o-despertar.jpg" alt="" />
+					<img ng-src="{{livro.foto}}" alt="" />
 				</div>
 				<div class="pull-left flex-container flex-column descricao-livro">
-					<div><b>Diarios de Um Vampiro - O Despertar</b></div>
-					<div class="cor-cinza">L. J. Smith</div>
+					<div><b>{{livro.titulo}}</b></div>
+					<div class="cor-cinza">{{livro.autor}}</div>
 					<div class="cor-cinza-claro">
 						<small>
-							bookmarklet and any web-page will display the text the best of designers have been bookmarklet and any web-page will display the text the best of designers have been
+							{{livro.descricao}}
 						</small>
 					</div>
 					<div class="cor-cinza-claro">
-						<small>Ano: 2013 - 244p</small>
+						<small>Ano: {{livro.ano}} - {{livro.paginas}}p</small>
 					</div>
 					<div class="cor-cinza-claro">
-						<small>Editora: Roch</small>
+						<small>Editora: {{livro.fornecedor.nome}}</small>
 					</div>
 				</div>
 			</div>
 			<div class="row flex-container flex-aling-items-center">
 				<div class="col-sm-6">
-					<b>R$: 40,00</b>
+					<b>R$: {{livro.valor}}</b>
 				</div>
 				<div class="col-sm-6 text-right">
-					<button class="btn btn-primary btn-verde">adicionar</button>
+					<button ng-click="adicionarItemNoCarrinho(livro)" class="btn btn-primary btn-verde">adicionar</button>
 				</div>
 			</div>
 		</div>
 		
-		<div class="container-livro flex-container flex-column">
-			<div class="flex-container flex-row">
-				<div class="pull-left"">
-					<img src="https://jovemnerd.com.br/wp-content/uploads/ads_capa_solano.jpg" alt="" />
-				</div>
-				<div class="pull-left flex-container flex-column descricao-livro">
-					<div><b>O Espadachim de Carvão</b></div>
-					<div class="cor-cinza">Affonso Solano</div>
-					<div class="cor-cinza-claro">
-						<small>
-							bookmarklet and any web-page will display the text the best of designers have been bookmarklet and any web-page will display the text the best of designers have been bookmarklet and any web-page will display the text the best of designers have been
-						</small>
-					</div>
-					<div class="cor-cinza-claro">
-						<small>Ano: 2013 - 244p</small>
-					</div>
-					<div class="cor-cinza-claro">
-						<small>Editora: Roch</small>
-					</div>
-				</div>
-			</div>
-			<div class="row flex-container flex-aling-items-center">
-				<div class="col-sm-6">
-					<b>R$: 40,00</b>
-				</div>
-				<div class="col-sm-6 text-right">
-					<button class="btn btn-primary btn-verde">adicionar</button>
-				</div>
-			</div>
-		</div>
 		
-		<div class="container-livro flex-container flex-column">
-			<div class="flex-container flex-row">
-				<div class="pull-left"">
-					<img src="https://osegredodamonalisa.files.wordpress.com/2013/04/capa-livro-insurgente-de-veronica-roth.jpg" alt="" />
-				</div>
-				<div class="pull-left flex-container flex-column descricao-livro">
-					<div><b>INSURGENTE</b></div>
-					<div class="cor-cinza">Veronica Roth</div>
-					<div class="cor-cinza-claro">
-						<small>
-							bookmarklet and any web-page will display the text the best of designers have been bookmarklet and any web-page will display the text the best of designers have been
-						</small>
-					</div>
-					<div class="cor-cinza-claro">
-						<small>Ano: 2013 - 244p</small>
-					</div>
-					<div class="cor-cinza-claro">
-						<small>Editora: Roch</small>
-					</div>
-				</div>
-			</div>
-			<div class="row flex-container flex-aling-items-center">
-				<div class="col-sm-6">
-					<b>R$: 40,00</b>
-				</div>
-				<div class="col-sm-6 text-right">
-					<button class="btn btn-primary btn-verde">adicionar</button>
-				</div>
-			</div>
-		</div>
-		
-		<div class="container-livro flex-container flex-column">
-			<div class="flex-container flex-row">
-				<div class="pull-left"">
-					<img src="http://2.bp.blogspot.com/-TOCRLYBV3N4/UsbbAXBZmkI/AAAAAAAAPuM/DbPHOcuv6HA/s1600/A-Menina-Que-Roubava-Livros-capa-filme-1.jpg" alt="" />
-				</div>
-				<div class="pull-left flex-container flex-column descricao-livro">
-					<div><b>A Menina que Roubava Livros</b></div>
-					<div class="cor-cinza">Markus Zusak</div>
-					<div class="cor-cinza-claro">
-						<small>
-							bookmarklet and any web-page will display the text the best of designers have been bookmarklet and any web-page will display the text the best of designers have been bookmarklet and any web-page will display the text the best of designers have been
-						</small>
-					</div>
-					<div class="cor-cinza-claro">
-						<small>Ano: 2013 - 244p</small>
-					</div>
-					<div class="cor-cinza-claro">
-						<small>Editora: Roch</small>
-					</div>
-				</div>
-			</div>
-			<div class="row flex-container flex-aling-items-center">
-				<div class="col-sm-6">
-					<b>R$: 40,00</b>
-				</div>
-				<div class="col-sm-6 text-right">
-					<button class="btn btn-primary btn-verde">adicionar</button>
-				</div>
-			</div>
-		</div>
 		
 	</div>
 </div>

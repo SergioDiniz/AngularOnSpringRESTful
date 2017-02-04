@@ -60,6 +60,20 @@ angular.module('livraria.cliente', [])
 				}
 			}
 		})
+		.state('cliente.carrinho',{
+			url: '/carrinho',
+			views: {
+				'clientehome': {
+					controller: 'CarrinhoClienteController',
+					templateUrl: 'modulos/cliente/carrinho/carrinho-cliente-view.html',
+					css: [
+						{
+							href: "asserts/css/cliente.css",
+						}
+					]
+				}
+			}
+		})
 				
 		
 		
