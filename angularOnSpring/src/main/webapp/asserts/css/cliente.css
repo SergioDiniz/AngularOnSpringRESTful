@@ -35,6 +35,10 @@
 	top: 3px;
 }
 
+.carrinho{
+	margin-bottom: 3em;
+}
+
 .carrinho table tr td{
 	vertical-align: middle !important;
 }
@@ -42,6 +46,21 @@
 .carrinho table tr td:NTH-CHILD(2){
 	vertical-align: top !important;
 }
+
+.carrinho .valor-total{
+	background-color: #EEEEEE;
+    padding: 1.5em;
+    margin-bottom: 2em;
+}
+
+.carrinho .valor-total .cor-verde{
+	font-size: 1.7em !important;
+}
+
+.carrinho .valor-total .cor-verde hr{
+	border-color: #dad4d4; 
+}
+
 
 
 @media (max-width: 999px) {
