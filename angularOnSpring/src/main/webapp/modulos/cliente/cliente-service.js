@@ -84,6 +84,11 @@ angular.module("livraria.cliente").factory("clienteService", function($http, $ro
 		$rootScope.numeroDeItensCarrinho = carrinho.length
 	}
 	
+	var limparCarrinho = function() {
+		localStorage.removeItem("carrinho")
+		$rootScope.numeroDeItensCarrinho = 0
+	}
+	
 	var fazerPedido = function() {
 		return $http.post(urlAPI + "/pedidos/fazer", getCarrinho())
 	}
@@ -103,6 +108,7 @@ angular.module("livraria.cliente").factory("clienteService", function($http, $ro
 		adicionarItemNoCarrinho:adicionarItemNoCarrinho,
 		alterarQuantidadeEmProduto:alterarQuantidadeEmProduto,
 		removerItemDoCarrinho:removerItemDoCarrinho,
+		limparCarrinho:limparCarrinho,
 		fazerPedido:fazerPedido
 	}
 	

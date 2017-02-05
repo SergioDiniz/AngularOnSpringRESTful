@@ -1,4 +1,4 @@
-angular.module("livraria.cliente").controller("CarrinhoClienteController", function($scope, clienteService) {
+angular.module("livraria.cliente").controller("CarrinhoClienteController", function($scope, $location, clienteService) {
 	$scope.carrinho = clienteService.getCarrinho()
 	
 	
@@ -28,13 +28,24 @@ angular.module("livraria.cliente").controller("CarrinhoClienteController", funct
 		$scope.somarValorTotal()
 	}
 	
+	$scope.limparCarrinho = function() {
+		clienteService.limparCarrinho()
+		
+		$scope.carrinho = []
+		$scope.valorDaCompra = 0
+	}
+	
 	$scope.realizarCompra = function() {
 		alert("comprando")
 		clienteService.fazerPedido()
 		.then(function(response) {
 			alert("ok")
+			$scope.limparCarrinho()
+			$location.path("/cliente/compras")
 		}).catch(function(response) {
-			alert(response.data.error)
+			alert(response.error)
 		})
 	}
+	
+	
 })
