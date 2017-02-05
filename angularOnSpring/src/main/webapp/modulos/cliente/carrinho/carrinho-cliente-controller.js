@@ -30,4 +30,8 @@ angular.module("livraria.cliente").controller("CarrinhoClienteController", funct
 		$scope.carrinho = clienteService.getCarrinho()
 		$scope.somarValorTotal()
 	}
+	
+	$scope.realizarCompra = function() {
+		alert("comprando")
+	}
 })

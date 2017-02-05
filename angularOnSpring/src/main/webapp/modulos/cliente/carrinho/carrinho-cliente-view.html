@@ -52,6 +52,7 @@
 			</tbody>
 		</table>
 		
+		<div ng-if="carrinho.length == 0 || carrinho == null">Nenhum Item no Carrinho!</div>
 		
 		
 		<div>
@@ -92,10 +93,10 @@
 		<div>
 			<div class="row">
 				<section class="col-sm-4 ">
-					<button class="btn btn-default btn-lg btn-block">Continuar Compando</button>
+					<button ui-sref="cliente" class="btn btn-default btn-lg btn-block">Continuar Compando</button>
 				</section>
 				<section class="col-sm-offset-4 col-sm-4">
-					<button class="btn btn-primary btn-verde btn-lg btn-block">Compar</button>
+					<button ng-disabled="carrinho.length == 0 || carrinho == null" ng-click="realizarCompra()" class="btn btn-primary btn-verde btn-lg btn-block">Compar</button>
 				</section>
 			</div>
 		</div>
