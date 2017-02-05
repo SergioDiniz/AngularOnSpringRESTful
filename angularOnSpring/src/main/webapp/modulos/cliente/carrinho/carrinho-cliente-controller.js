@@ -22,6 +22,12 @@ angular.module("livraria.cliente").controller("CarrinhoClienteController", funct
 			
 			console.log(produto.item.titulo)
 		})
+	}
+	
+	$scope.removerItemDoCarrinho = function(indexItem, produto) {
+		clienteService.removerItemDoCarrinho(indexItem, produto)
 		
+		$scope.carrinho = clienteService.getCarrinho()
+		$scope.somarValorTotal()
 	}
 })

@@ -38,7 +38,12 @@
 						</section>
 					</td>
 					<td width="150px" >
-						<input type="number" ng-change="almentarQuantidade($index, produto)" ng-model="produto.quantidade" class="form-control input-lg text-center"/>
+						<section>
+							<input type="number" min="1" ng-change="almentarQuantidade($index, produto)" ng-model="produto.quantidade" class="form-control input-lg text-center"/>
+						</section>
+						<section class="text-center">
+							<button class="btn btn-link" ng-click="removerItemDoCarrinho($index, produto)">excluir</button>
+						</section>
 					</td>
 					<td width="150px" class="text-center">
 						{{getValorTotal(produto.item.valor, produto.quantidade)}}

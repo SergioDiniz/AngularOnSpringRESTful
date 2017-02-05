@@ -75,6 +75,15 @@ angular.module("livraria.cliente").factory("clienteService", function($http, $ro
 		setCarrinho(carrinho)
 	}
 	
+	var removerItemDoCarrinho = function(indexItem, produto) {
+		var carrinho = getCarrinho().filter(function(elt, i, array) {
+			return elt.item.id != produto.item.id;
+		})
+		setCarrinho(carrinho)
+		
+		$rootScope.numeroDeItensCarrinho = carrinho.length
+	}
+	
 	return{
 		carregarEstados:carregarEstados,
 		carregarCidades:carregarCidades,
@@ -88,7 +97,8 @@ angular.module("livraria.cliente").factory("clienteService", function($http, $ro
 		setItemCarrinho:setItemCarrinho,
 		setQuantidadeEmItemProduto:setQuantidadeEmItemProduto,
 		adicionarItemNoCarrinho:adicionarItemNoCarrinho,
-		alterarQuantidadeEmProduto:alterarQuantidadeEmProduto
+		alterarQuantidadeEmProduto:alterarQuantidadeEmProduto,
+		removerItemDoCarrinho:removerItemDoCarrinho
 	}
 	
 })
