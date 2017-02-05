@@ -17,10 +17,7 @@ angular.module("livraria.cliente").controller("CarrinhoClienteController", funct
 		var carrinho = clienteService.getCarrinho()
 		
 		carrinho.forEach(function(produto, i, array) {
-			
-			$scope.valorDaCompra += produto.quantidade * parseFloat(produto.item.valor)
-			
-			console.log(produto.item.titulo)
+			$scope.valorDaCompra += produto.quantidade * parseFloat(produto.livro.valor)
 		})
 	}
 	

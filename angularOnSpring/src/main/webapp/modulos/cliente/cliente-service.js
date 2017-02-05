@@ -40,8 +40,8 @@ angular.module("livraria.cliente").factory("clienteService", function($http, $ro
 		localStorage.setItem("carrinho", JSON.stringify(carrinho))
 	}
 	
-	var setItemCarrinho = function(item) {
-		var itemProduto = {'item': item, 'quantidade': 1}
+	var setItemCarrinho = function(livro) {
+		var itemProduto = {'livro': livro, 'quantidade': 1}
 		var carrinho = getCarrinho()
 		carrinho.push(itemProduto)
 		setCarrinho(carrinho)
@@ -55,14 +55,14 @@ angular.module("livraria.cliente").factory("clienteService", function($http, $ro
 		setCarrinho(carrinho)
 	}
 	
-	var adicionarItemNoCarrinho = function(item) {
+	var adicionarItemNoCarrinho = function(livro) {
 		
 		var indexExisteItem = getCarrinho().findIndex(function(currentValue) {
-			return currentValue.item.id === item.id
+			return currentValue.livro.id === livro.id
 		})
 		
 		if(indexExisteItem == -1){
-			setItemCarrinho(item)
+			setItemCarrinho(livro)
 		} else{
 			setQuantidadeEmItemProduto(indexExisteItem)
 		}
@@ -77,7 +77,7 @@ angular.module("livraria.cliente").factory("clienteService", function($http, $ro
 	
 	var removerItemDoCarrinho = function(indexItem, produto) {
 		var carrinho = getCarrinho().filter(function(elt, i, array) {
-			return elt.item.id != produto.item.id;
+			return elt.livro.id != produto.livro.id;
 		})
 		setCarrinho(carrinho)
 		

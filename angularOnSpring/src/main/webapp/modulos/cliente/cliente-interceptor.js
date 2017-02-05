@@ -3,9 +3,13 @@ angular.module("livraria.cliente").factory("clienteInterceptor", function($q, $l
 	return {
 		'request': function(config){
 //			console.log("passando pelo request")
-			var token = localStorage.getItem("session_token")
+			var inicioDaRota = $location.path().slice(0, 6)
 			
-			config.headers.Authorization = token
+			if(inicioDaRota != '/admin'){
+				var token = localStorage.getItem("session_token")
+				config.headers.Authorization = token
+			}
+			
 			return config;
 		},
 		

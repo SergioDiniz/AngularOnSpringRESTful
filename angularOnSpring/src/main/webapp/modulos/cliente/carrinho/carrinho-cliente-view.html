@@ -1,5 +1,5 @@
 <div class="carrinho container">
-
+	
 	<div class="text-center">
 		<br />
 		<h1>Meu Carrinho <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> </h1>
@@ -19,21 +19,21 @@
 			<tbody>
 				<tr ng-repeat="produto in carrinho">
 					<td  style="width: 70px !important">
-						<img ng-src="{{produto.item.foto}}" width="100%" alt="" />
+						<img ng-src="{{produto.livro.foto}}" width="100%" alt="" />
 					</td>
 					<td>
 						<section>
-							<b>{{produto.item.titulo}}</b>
+							<b>{{produto.livro.titulo}}</b>
 						</section>
 						<section>
 							<small>
-								{{produto.item.autor}}
+								{{produto.livro.autor}}
 							</small>
 						</section>
 						<section>
 							<br />
 							<b>
-								R$: {{produto.item.valor}}
+								R$: {{produto.livro.valor}}
 							</b>
 						</section>
 					</td>
@@ -46,7 +46,7 @@
 						</section>
 					</td>
 					<td width="150px" class="text-center">
-						{{getValorTotal(produto.item.valor, produto.quantidade)}}
+						{{getValorTotal(produto.livro.valor, produto.quantidade)}}
 					</td>
 				</tr>
 			</tbody>
