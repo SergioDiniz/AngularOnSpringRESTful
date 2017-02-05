@@ -84,6 +84,10 @@ angular.module("livraria.cliente").factory("clienteService", function($http, $ro
 		$rootScope.numeroDeItensCarrinho = carrinho.length
 	}
 	
+	var fazerPedido = function() {
+		return $http.post(urlAPI + "/pedidos/fazer", getCarrinho())
+	}
+	
 	return{
 		carregarEstados:carregarEstados,
 		carregarCidades:carregarCidades,
@@ -98,7 +102,8 @@ angular.module("livraria.cliente").factory("clienteService", function($http, $ro
 		setQuantidadeEmItemProduto:setQuantidadeEmItemProduto,
 		adicionarItemNoCarrinho:adicionarItemNoCarrinho,
 		alterarQuantidadeEmProduto:alterarQuantidadeEmProduto,
-		removerItemDoCarrinho:removerItemDoCarrinho
+		removerItemDoCarrinho:removerItemDoCarrinho,
+		fazerPedido:fazerPedido
 	}
 	
 })

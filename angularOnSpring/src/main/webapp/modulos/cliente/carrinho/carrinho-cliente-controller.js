@@ -30,5 +30,11 @@ angular.module("livraria.cliente").controller("CarrinhoClienteController", funct
 	
 	$scope.realizarCompra = function() {
 		alert("comprando")
+		clienteService.fazerPedido()
+		.then(function(response) {
+			alert("ok")
+		}).catch(function(response) {
+			alert(response.data.error)
+		})
 	}
 })
