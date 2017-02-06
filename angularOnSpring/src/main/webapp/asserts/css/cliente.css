@@ -62,6 +62,24 @@
 }
 
 
+.compras table tr td:NTH-CHILD(2){
+	width: 200px;
+}
+.compras table tr td:NTH-CHILD(3){
+	width: 120px;
+}
+
+.compras table tr td{
+	vertical-align: middle !important;
+}
+
+.compras table tr th:NTH-CHILD(2),
+.compras table tr th:NTH-CHILD(3),
+.compras table tr td:NTH-CHILD(2),
+.compras table tr td:NTH-CHILD(3){
+	text-align: center;
+}
+
 
 @media (max-width: 999px) {
   .container {

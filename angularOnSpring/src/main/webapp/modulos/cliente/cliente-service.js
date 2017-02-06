@@ -93,6 +93,10 @@ angular.module("livraria.cliente").factory("clienteService", function($http, $ro
 		return $http.post(urlAPI + "/pedidos/fazer", getCarrinho())
 	}
 	
+	var carregarComprasDeCliente = function() {
+		return $http.get(urlAPI + "/pedidos/")
+	}
+	
 	return{
 		carregarEstados:carregarEstados,
 		carregarCidades:carregarCidades,
@@ -109,7 +113,8 @@ angular.module("livraria.cliente").factory("clienteService", function($http, $ro
 		alterarQuantidadeEmProduto:alterarQuantidadeEmProduto,
 		removerItemDoCarrinho:removerItemDoCarrinho,
 		limparCarrinho:limparCarrinho,
-		fazerPedido:fazerPedido
+		fazerPedido:fazerPedido,
+		carregarComprasDeCliente:carregarComprasDeCliente
 	}
 	
 })

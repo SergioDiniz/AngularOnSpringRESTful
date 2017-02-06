@@ -1,1 +1,53 @@
-minhas compras: {{compras}}
+<div class="container compras" ng-init="carregarComprasDeCliente()">
+	<br />
+	<div class="text-center">
+		<h1>Minhas Compras <span class="glyphicon glyphicon-book"></span></h1>
+	</div>
+	<br />
+	<div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Produto(s)</th>
+					<th>Data</th>
+					<th>Valor</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr ng-repeat="pedido in compras">
+					<td>
+						<section class="cor-cinza">
+							<b>{{pedido.itensPedido.length}}</b> produtos:
+						</section>
+						<section>
+							<div class="pull-left" ng-repeat="item in pedido.itensPedido" style="margin-right: 20px; margin-bottom: 10px;">
+								 <div class="pull-left" style="margin-right: 5px;">
+								 	<img ng-src="{{item.livro.foto}}" width="30" />
+								 </div>
+								 <div class="pull-left">
+								 	<b>{{item.livro.titulo}}</b> <br />
+								 	<small class="cor-cinza">R$ {{item.livro.valor}} x {{item.quantidade}}</small>
+								 </div>
+							</div>
+						</section>
+					</td>
+					
+					<td>{{pedido.dataPedido | date: "dd 'de' MMMM ',' yyyy"}}</td>
+					
+					<td>R$ {{pedido.valorTotal}}</td>
+				</tr>
+			</tbody>
+			
+		</table>
+		
+		<div ng-if="compras == null || compras.length == 0">
+			{{mensagem}}
+		</div>
+		
+	</div>
+	<br />
+	<br />
+	<br />
+</div>
+
