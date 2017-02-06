@@ -77,6 +77,12 @@ public class ClienteService {
 		return cliente;
 	}
 	
+	public Cliente getClientePorToken(String token){
+		Integer clienteId = Integer.parseInt(ManagerJWT.decodeJWT(token).getId());
+		Cliente cliente = repository.findOne(clienteId);
+		return cliente;
+	}
+	
 	
 //	@Transactional(readOnly=false, propagation=Propagation.REQUIRED)
 //	public void salvar(Cliente cliente){

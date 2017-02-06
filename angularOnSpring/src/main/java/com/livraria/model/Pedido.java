@@ -26,7 +26,7 @@ public class Pedido {
 	private Date dataPedido = Calendar.getInstance().getTime();
 
 	@ManyToOne
-	private Cliente cliente;
+	private Cliente cliente = new Cliente();
 
 	@ManyToMany
 	private List<ItemPedido> itensPedido = new ArrayList<>();

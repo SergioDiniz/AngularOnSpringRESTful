@@ -35,7 +35,7 @@ public class PedidoService {
 		
 		pedido.setDataPedido(new Date());
 		pedido.setValorTotal(calcularValorTotalDePedido(pedido));
-		Cliente cliente = clienteService.clienteLogado(token); 
+		Cliente cliente = clienteService.getClientePorToken(token); 
 		pedido.setCliente(cliente);
 		return pedidoRepository.save(pedido);
 		
