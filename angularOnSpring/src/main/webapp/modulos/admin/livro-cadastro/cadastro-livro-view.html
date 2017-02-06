@@ -20,7 +20,7 @@
 		</div>
 		<div class="form-group">
 			<label for="isbn">ISBN:</label>
-			<input type="number" ng-model="livro.isbn" class="form-control input-lg" id="isbn" />
+			<input type="text" maxlength="17" ng-model="livro.isbn" class="form-control input-lg" id="isbn" />
 		</div>
 		<div class="form-group">
 			<label for="ano">Ano:</label>
@@ -32,7 +32,20 @@
 		</div>
 		<div class="form-group">
 			<label for="valor">Valor R$:</label>
-			<input type="text" ng-model="livro.valor" class="form-control input-lg" id="valor" />
+			<input type="number" step="0.01" ng-model="livro.valor" class="form-control input-lg" id="valor" />
+		</div>
+		<div class="form-group">
+			<label for="categoria">Categoria:</label>
+			<select id="categoria" class="form-control input-lg"
+					ng-model="livro.categoria">
+				<option value="" disabled selected> -- Selecione -- </option>
+				<option value="Ação" >Ação</option>
+				<option value="Aventura">Aventura</option>
+				<option value="Horror">Horror</option>
+				<option value="Infantil">Infantil</option>
+				<option value="Ficção">Ficção</option>
+				<option value="Romance">Romance</option>
+			</select>
 		</div>
 		<div class="form-group">
 			<label for="fornecedor">Fornecedor:</label>
