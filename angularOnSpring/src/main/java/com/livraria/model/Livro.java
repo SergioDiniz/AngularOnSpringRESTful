@@ -26,7 +26,9 @@ public class Livro {
 
 	private Long paginas;
 
-	private String valor;
+	private Double valor;
+	
+	private String categoria;
 
 	@Column(columnDefinition = "text")
 	private String foto;
@@ -94,12 +96,20 @@ public class Livro {
 		this.paginas = paginas;
 	}
 
-	public String getValor() {
+	public Double getValor() {
 		return valor;
 	}
 
-	public void setValor(String valor) {
+	public void setValor(Double valor) {
 		this.valor = valor;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
 	}
 
 	public String getFoto() {

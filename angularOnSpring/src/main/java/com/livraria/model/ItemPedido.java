@@ -12,8 +12,7 @@ public class ItemPedido {
 	@GeneratedValue
 	private int id;
 
-	@ManyToOne
-	private Pedido pedido;
+	private Double valor;
 
 	@ManyToOne
 	private Livro livro;
@@ -32,12 +31,12 @@ public class ItemPedido {
 		this.id = id;
 	}
 
-	public Pedido getPedido() {
-		return pedido;
+	public Double getValor() {
+		return valor;
 	}
 
-	public void setPedido(Pedido pedido) {
-		this.pedido = pedido;
+	public void setValor(Double valor) {
+		this.valor = valor;
 	}
 
 	public Livro getLivro() {
