@@ -1,11 +1,6 @@
 angular.module("livraria.cliente").controller("CarrinhoClienteController", function($scope, $location, clienteService) {
 	$scope.carrinho = clienteService.getCarrinho()
 	
-	
-	$scope.getValorTotal = function(valor, quantidade) {
-		return quantidade * parseFloat(valor)
-	}
-	
 	$scope.almentarQuantidade = function(indexItem, produto) {
 		clienteService.alterarQuantidadeEmProduto(indexItem, produto)
 		$scope.somarValorTotal()
@@ -17,7 +12,7 @@ angular.module("livraria.cliente").controller("CarrinhoClienteController", funct
 		var carrinho = clienteService.getCarrinho()
 		
 		carrinho.forEach(function(produto, i, array) {
-			$scope.valorDaCompra += produto.quantidade * parseFloat(produto.livro.valor)
+			$scope.valorDaCompra += produto.quantidade * produto.valor
 		})
 	}
 	

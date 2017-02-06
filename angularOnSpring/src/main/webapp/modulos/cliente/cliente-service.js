@@ -45,7 +45,7 @@ angular.module("livraria.cliente").factory("clienteService", function($http, $ro
 	}
 	
 	var setItemCarrinho = function(livro) {
-		var itemProduto = {'livro': livro, 'quantidade': 1}
+		var itemProduto = {'livro': livro, 'quantidade': 1, 'valor': livro.valor}
 		var carrinho = getCarrinho()
 		carrinho.push(itemProduto)
 		setCarrinho(carrinho)

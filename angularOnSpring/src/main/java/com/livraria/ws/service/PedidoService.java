@@ -62,7 +62,7 @@ public class PedidoService {
 		valorTotal = 0;
 		
 		pedido.getItensPedido().forEach(item -> {
-			double valorLivro = item.getLivro().getValor();
+			double valorLivro = item.getValor();
 			int quantidade = item.getQuantidade();
 			
 			valorTotal += valorLivro * quantidade;
