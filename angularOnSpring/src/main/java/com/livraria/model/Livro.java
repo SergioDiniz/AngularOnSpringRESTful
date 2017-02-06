@@ -1,10 +1,15 @@
 package com.livraria.model;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 
 @Entity
@@ -20,11 +25,14 @@ public class Livro {
 
 	private String descricao;
 
-	private Long isbn;
+	private String isbn;
 
-	private Long ano;
+	private int ano;
 
-	private Long paginas;
+	private int paginas;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date dataCadastro = Calendar.getInstance().getTime();
 
 	private Double valor;
 	
@@ -72,28 +80,36 @@ public class Livro {
 		this.descricao = descricao;
 	}
 
-	public Long getIsbn() {
+	public String getIsbn() {
 		return isbn;
 	}
 
-	public void setIsbn(Long isbn) {
+	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
 
-	public Long getAno() {
+	public int getAno() {
 		return ano;
 	}
 
-	public void setAno(Long ano) {
+	public void setAno(int ano) {
 		this.ano = ano;
 	}
 
-	public Long getPaginas() {
+	public int getPaginas() {
 		return paginas;
 	}
 
-	public void setPaginas(Long paginas) {
+	public void setPaginas(int paginas) {
 		this.paginas = paginas;
+	}
+
+	public Date getDataCadastro() {
+		return dataCadastro;
+	}
+
+	public void setDataCadastro(Date dataCadastro) {
+		this.dataCadastro = dataCadastro;
 	}
 
 	public Double getValor() {

@@ -1,5 +1,8 @@
 package com.livraria.model;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -8,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 
 @Entity
@@ -19,7 +24,10 @@ public class Pessoa {
 	private String nome;
 	private Boolean ativo;
 	private String telefone;
-
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date dataCadastro = Calendar.getInstance().getTime();
+	
 	@Column(columnDefinition = "text")
 	private String foto;
 
@@ -63,6 +71,14 @@ public class Pessoa {
 
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
+	}
+
+	public Date getDataCadastro() {
+		return dataCadastro;
+	}
+
+	public void setDataCadastro(Date dataCadastro) {
+		this.dataCadastro = dataCadastro;
 	}
 
 	public String getFoto() {
