@@ -34,4 +34,12 @@ public class LivroService {
 		return repository.findOne(id);
 	}
 	
+	// filtrar por categoria
+	public Collection<Livro> livrosPorCategoria(String categoria){
+		if(categoria.equals("Todos")){
+			return listarLivros();
+		}
+		return repository.findByCategoriaOrderByTituloAsc(categoria);
+	}
+	
 }

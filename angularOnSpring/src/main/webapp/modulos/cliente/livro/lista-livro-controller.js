@@ -12,4 +12,15 @@ angular.module("livraria.cliente").controller("LivroClienteController", function
 		$location.path("/cliente/carrinho")
 	}
 	
+	$scope.filtroLivroPorCategoria = function(categoria) {
+		clienteService.filtrarLivrosPorCategoria(categoria)
+		.then(function(response) {
+			$scope.mensagem = ''
+			$scope.livros = response.data
+			if($scope.livros.length == 0){
+				$scope.mensagem = "Nenhum livro localizado!"
+			}
+		})
+	}
+	
 })

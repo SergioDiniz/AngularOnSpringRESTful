@@ -1,4 +1,4 @@
-<div class="col-sm-12" style="background-color: #F0F4F7;">
+<div class="col-sm-12" style="background-color: #F0F4F7; height: 100%;">
 	<div class="col-sm-12">
 		<h1>Livros Disponiveis</h1>
 	</div>
@@ -6,18 +6,25 @@
 		<div class="col-sm-2">
 			Total de livros: <b>{{livros.length}}</b>
 		</div>
-		<div class="col-sm-6 text-center">
-			pesquisar		
+		<div class="col-sm-5 text-center">
+					
 		</div>
-		<div class="col-sm-4 text-right filtro-livro">
-			<a href="">Todos</a>
-			<a href="">Ação</a>
-			<a href="">Aventura</a>
-			<a href="">Ficção</a>
-			<a href="">Romance</a>
+		<div class="col-sm-5 text-right filtro-livro">
+			<a href="" ng-click="filtroLivroPorCategoria('Todos')">Todos</a>
+			<a href="" ng-click="filtroLivroPorCategoria('Ação')">Ação</a>
+			<a href="" ng-click="filtroLivroPorCategoria('Aventura')">Aventura</a>
+			<a href="" ng-click="filtroLivroPorCategoria('Horror')">Horror</a>
+			<a href="" ng-click="filtroLivroPorCategoria('Infantil')">Infantil</a>
+			<a href="" ng-click="filtroLivroPorCategoria('Ficção')">Ficção</a>
+			<a href="" ng-click="filtroLivroPorCategoria('Romance')">Romance</a>
 		</div>
 	</div>
 	<div class="col-sm-12 lista-livro flex-container flex-row flex-wrap" ng-init="carregarLivros()">
+		
+		<div ng-if="mensagem.length != 0">
+			{{mensagem}}
+		</div>
+		
 		<div class="container-livro flex-container flex-column" ng-repeat="livro in livros">
 			<div class="flex-container flex-row">
 				<div class="pull-left"">

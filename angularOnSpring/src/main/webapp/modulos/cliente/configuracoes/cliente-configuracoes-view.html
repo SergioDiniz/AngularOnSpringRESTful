@@ -6,13 +6,13 @@
 		<br /><br />
 	</div>
 	
-	<form name="formAtualizar" class="col-sm-offset-3 col-sm-6" ng-submit="atualizarCliente()" ng-init="carregarDadosDoCliente()">
+	<form name="formAtualizar" class="col-md-offset-3 col-md-6" ng-submit="atualizarCliente()" ng-init="carregarDadosDoCliente()">
 		<div class=" row">
-			<div class="form-group col-sm-8">
+			<div class="form-group col-md-8">
 				<label>Nome:</label>
 				<input type="text" ng-model="cliente.nome" class="input-lg form-control" placeholder="Nome"/>
 			</div>
-			<div class="form-group col-sm-4">
+			<div class="form-group col-md-4">
 				<label>Sexo:</label>
 				<select class="form-control input-lg" ng-model="cliente.sexo">
 				  <option value="" disabled selected>Sexo</option>
@@ -26,7 +26,7 @@
 			<input type="text" ng-model="cliente.endereco" class="input-lg form-control" placeholder="Endereço"/>
 		</div>
 		<div class="row">
-			<div class="form-group  col-sm-6" ng-init="carregarEstadosCidade()">
+			<div class="form-group  col-md-6" ng-init="carregarEstadosCidade()">
 				<label>Estado:</label>
 				<select class="form-control input-lg" ng-model="cliente.estados" 
 					ng-change="carregarCidades(cliente.estados)" 
@@ -34,7 +34,7 @@
 				  <option value="" disabled selected>Estado</option>
 				</select>
 			</div>
-			<div class="form-group  col-sm-6" >
+			<div class="form-group  col-md-6" >
 				<label>Cidade:</label>
 				<select class="form-control input-lg" ng-model="cliente.cidades"
 					ng-options="cidade.nome for cidade in cidades track by cidade.id">
@@ -43,11 +43,11 @@
 			</div>
 		</div>
 		<div class=" row">
-			<div class="form-group col-sm-6">
+			<div class="form-group col-md-6">
 				<label>CPF:</label>
 				<input type="text" ng-model="cliente.cpf" class="input-lg form-control" placeholder="CPF"/>
 			</div>
-			<div class="form-group col-sm-6">
+			<div class="form-group col-md-6">
 				<label>Telefone:</label>
 				<input type="text" ng-model="cliente.telefone" class="input-lg form-control" placeholder="Telefone"/>
 			</div>
@@ -63,7 +63,7 @@
 		
 		<div class="form-group">
 			<label for="foto">Foto:</label>
-			<input type="file" value="Selecione uma Foto" id="fileInput" class="btn btn-default"/>
+			<input type="file" value="Selecione uma Foto" title="Selecione uma Foto" id="fileInput" class="btn btn-default"/>
 			<br />
 			<div class="cropArea" ng-show="myImage.length > 0">
 				<img-crop image="myImage" result-image="cliente.foto" ></img-crop>

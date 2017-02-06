@@ -24,6 +24,11 @@ angular.module("livraria.cliente").controller("ClienteConfiguracoesController", 
 	}
 	
 	$scope.atualizarCliente = function() {
+		
+		if($scope.cliente.foto.length == 0){
+			$scope.cliente.foto = $rootScope.clienteLogado.foto
+		}
+		
 		clienteService.atualizarCliente($scope.cliente)
 		.then(function(response) {
 			

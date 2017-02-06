@@ -101,6 +101,10 @@ angular.module("livraria.cliente").factory("clienteService", function($http, $ro
 		return $http.get(urlAPI + "/pedidos/")
 	}
 	
+	var filtrarLivrosPorCategoria = function(categoria) {
+		return $http.get(urlAPI + "/livro/categoria/"+categoria)
+	}
+	
 	return{
 		carregarEstados:carregarEstados,
 		carregarCidades:carregarCidades,
@@ -119,7 +123,8 @@ angular.module("livraria.cliente").factory("clienteService", function($http, $ro
 		removerItemDoCarrinho:removerItemDoCarrinho,
 		limparCarrinho:limparCarrinho,
 		fazerPedido:fazerPedido,
-		carregarComprasDeCliente:carregarComprasDeCliente
+		carregarComprasDeCliente:carregarComprasDeCliente,
+		filtrarLivrosPorCategoria:filtrarLivrosPorCategoria
 	}
 	
 })

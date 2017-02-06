@@ -52,4 +52,10 @@ public class LivroController {
 	public Livro getLivro(@PathVariable Integer id){
 		return service.getLivro(id);
 	}
+	
+	// filtrar por categoria
+	@GetMapping("/categoria/{categoria}")
+	public Collection<Livro> livrosPorCategoria(@PathVariable String categoria){
+		return service.livrosPorCategoria(categoria);
+	}
 }
