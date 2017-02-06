@@ -6,7 +6,7 @@ angular.module('livraria.cliente', [])
 	
 	$stateProvider
 		.state('cadastro-cliente', {
-			url: '/cliente/cadastro',
+			url: '/cadastro',
 			views: {
 				'home':{
 					templateUrl: "modulos/cliente/cadastro/cadastro-cliente-view.html",
@@ -19,7 +19,7 @@ angular.module('livraria.cliente', [])
 			}
 		})
 		.state('login-cliente', {
-			url: '/cliente/login',
+			url: '/login',
 			views: {
 				'home':{
 					templateUrl: "modulos/cliente/login/login-cliente-view.html",

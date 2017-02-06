@@ -9,11 +9,11 @@ angular.module('livraria', argumentos)
 		console.log("executanto o run: " + $location.path())
 		
 		if($location.path() == null || $location.path() == "" || $location.path() == "/"){
-			$location.path("/cliente/login")
+			$location.path("/login")
 		}
 		
 		var token = localStorage.getItem("session_token")
-		var rotasBloqueadasClienteLogado = ['/cliente/login', '/cliente/cadastro']
+		var rotasBloqueadasClienteLogado = ['/login', '/cadastro']
 		var rotasPermiticasClienteLocado = ['/cliente','/cliente/carrinho', '/cliente/compras', '/cliente/configuracoes']
 		var livroId = $stateParams.livroId
 		var fornecedorId = $stateParams.fornecedorId
@@ -33,10 +33,10 @@ angular.module('livraria', argumentos)
 			if(inicioDaRota == '/admin'){
 				$location.path("/admin")
 			}else{
-				if($location.path() == '/cliente/cadastro'){
-					$location.path("/cliente/cadastro")
+				if($location.path() == '/cadastro'){
+					$location.path("/cadastro")
 				} else {
-					$location.path("/cliente/login")
+					$location.path("/login")
 				}
 			}
 		}

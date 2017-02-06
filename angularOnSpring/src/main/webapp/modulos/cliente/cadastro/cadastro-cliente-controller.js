@@ -20,7 +20,7 @@ angular.module('livraria.cliente').controller('CadastroClienteController', funct
 		clienteService.cadastrarCliente($scope.cliente).then(function(response) {
 			console.log("ok")
 			$scope.cliente = null
-			$location.path('/cliente/login')
+			$location.path('/login')
 			
 		}).catch(function(response) {
 			console.log("error")
