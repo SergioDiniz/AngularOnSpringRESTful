@@ -39,15 +39,15 @@ public class PedidoController {
 	}
 	
 	// listar
-	@GetMapping("/")
+	@GetMapping("/all")
 	public Collection<Pedido> listarPedidos(){
 		return service.listarPedidos();
 	}
 	
 	// listar de cliente
-	@GetMapping("/{id}")
-	public Collection<Pedido> pedidosDeCliente(@PathVariable Integer id){
-		return service.pedidosDeCliente(id);
+	@GetMapping("/")
+	public Collection<Pedido> pedidosDeCliente(@RequestHeader(value="Authorization") String token){
+		return service.pedidosDeCliente(token);
 	}
 	
 	// receber pedido

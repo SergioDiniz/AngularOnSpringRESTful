@@ -52,8 +52,9 @@ public class PedidoService {
 	}
 	
 	// listar pedidos de clientes
-	public Collection<Pedido> pedidosDeCliente(Integer id){
-		return pedidoRepository.pedidosDeCLiente(id);
+	public Collection<Pedido> pedidosDeCliente(String token){
+		Cliente cliente =  clienteService.clienteLogado(token);
+		return pedidoRepository.pedidosDeCLiente(cliente.getId());
 	}
 	
 	public Double calcularValorTotalDePedido(Pedido pedido){
