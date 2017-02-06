@@ -9,6 +9,10 @@
     padding: 0.8em 0;
 }
 
+.menu-cliente-lateral img{
+	margin-bottom: 10px;
+}
+
 .menu-cliente-lateral div{
 	padding: 0em 1em;
 }
@@ -78,6 +82,14 @@
 .compras table tr td:NTH-CHILD(2),
 .compras table tr td:NTH-CHILD(3){
 	text-align: center;
+}
+
+
+.cropArea {
+  background: #fff;
+  overflow: hidden;
+  
+  height:350px;
 }
 
 

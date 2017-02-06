@@ -3,7 +3,7 @@ angular.module("livraria.cliente").controller("HomeClienteController", function(
 	var clienteLogado = function() {
 		clienteService.clienteLogado()
 		.then(function(response) {
-			$scope.cliente =  response.data;
+			$rootScope.clienteLogado =  response.data;
 		})
 	}
 	
