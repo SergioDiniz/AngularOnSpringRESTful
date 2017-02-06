@@ -36,6 +36,12 @@ public class ClienteService {
 	}
 	
 	public Cliente salvarCliente(Cliente cliente){
+		
+		if(cliente.getSenha() == null || cliente.getSenha().length() <= 0){
+			Cliente cbd = getCliente(cliente.getId());
+			cliente.setSenha(cbd.getSenha());
+		}
+		
 		return repository.save(cliente);
 	}
 

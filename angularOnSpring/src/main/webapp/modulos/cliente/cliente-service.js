@@ -12,6 +12,10 @@ angular.module("livraria.cliente").factory("clienteService", function($http, $ro
 		return $http.post(urlAPI + "/cliente/", cliente);
 	}
 	
+	var atualizarCliente = function(cliente) {
+		return $http.put(urlAPI + "/cliente/", cliente)
+	}
+	
 	var loginCliente = function(cliente){
 		return $http.post(urlAPI + "/cliente/login", cliente);
 	}
@@ -101,6 +105,7 @@ angular.module("livraria.cliente").factory("clienteService", function($http, $ro
 		carregarEstados:carregarEstados,
 		carregarCidades:carregarCidades,
 		cadastrarCliente:cadastrarCliente,
+		atualizarCliente:atualizarCliente,
 		loginCliente:loginCliente,
 		clienteLogado:clienteLogado,
 		encerrarSessao:encerrarSessao,
