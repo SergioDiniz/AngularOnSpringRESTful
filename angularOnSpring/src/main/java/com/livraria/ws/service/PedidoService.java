@@ -59,10 +59,14 @@ public class PedidoService {
 	// listar pedidos de clientes
 	public Collection<Pedido> pedidosDeCliente(String token){
 		Cliente cliente =  clienteService.clienteLogado(token);
-		
+
 		List<Pedido> pedidos = pedidoRepository.pedidosDeCLiente(cliente.getId());
 		pedidos.forEach(pedido -> {
-			pedido.getItensPedido().forEach(item -> item.getLivro().setFoto(null));
+			pedido.setCliente(null);
+			pedido.getItensPedido().forEach(item -> {
+				item.getLivro().setFoto(null);
+				item.getLivro().setFornecedor(null);
+			});
 		});
 		return pedidos;
 	}

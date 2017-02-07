@@ -19,7 +19,7 @@
 			<tbody>
 				<tr ng-repeat="produto in carrinho">
 					<td  style="width: 70px !important">
-						<img foto-src="produto.livro.id" width="100%" alt="" />
+						<img foto-src="{{produto.livro.id}}" width="100%" alt="" />
 					</td>
 					<td>
 						<section>
@@ -96,7 +96,7 @@
 					<button ui-sref="cliente" class="btn btn-default btn-lg btn-block">Continuar Comprando</button>
 				</section>
 				<section class="col-sm-offset-4 col-sm-4">
-					<button ng-disabled="carrinho.length == 0 || carrinho == null" ng-click="realizarCompra()" class="btn btn-primary btn-verde btn-lg btn-block">Comprar</button>
+					<button ng-disabled="carrinho.length == 0 || carrinho == null" ng-click="realizarCompra()" class="btn btn-danger btn-verde btn-lg btn-block">Comprar</button>
 				</section>
 			</div>
 		</div>
