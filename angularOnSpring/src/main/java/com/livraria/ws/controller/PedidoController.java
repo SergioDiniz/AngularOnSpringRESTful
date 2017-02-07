@@ -47,6 +47,7 @@ public class PedidoController {
 	// listar de cliente
 	@GetMapping("/")
 	public Collection<Pedido> pedidosDeCliente(@RequestHeader(value="Authorization") String token){
+		System.out.println("token" + token);
 		return service.pedidosDeCliente(token);
 	}
 	

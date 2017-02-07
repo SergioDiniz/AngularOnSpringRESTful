@@ -2,21 +2,29 @@ angular.module("livraria.cliente").factory("clienteInterceptor", function($q, $l
 	
 	return {
 		'request': function(config){
-//			console.log("passando pelo request")
 			var inicioDaRota = $location.path().slice(0, 6)
 			
 			if(inicioDaRota != '/admin'){
 				var token = localStorage.getItem("session_token")
 				config.headers.Authorization = token
+				config.headers.admin = false
+			} else{
+				config.headers.admin = true
 			}
 			
 			return config;
 		},
 		
 		'response': function (response){
-//			console.log("Passei pelo response do interceptor!")
 	    	return response;
-	    }
+	    },
+	    
+	    'responseError': function(rejection) {
+			if(rejection.status == 401){
+				localStorage.removeItem("session_token")
+				$location.path("/login")
+			}
+		}
 	}
 	
 })
