@@ -11,17 +11,20 @@ angular.module('livraria.cliente').controller('loginClienteController', function
 		clienteService.loginCliente($scope.cliente)
 		.then(function(response) {
 			
-			console.log("login ok!")
-			localStorage.setItem("session_token", response.data.token)
-			$location.path("/cliente")
-			
-		}).catch(function(response) {
 			if (response.status == 401) {
 				alert("Email ou Senha Incorretos!")
 				$scope.cliente.senha = null;
-			} else if (response.status == 406){
+			} else if (response.status == 206){
 				alert("Email e Senha Obrigatorios!")
+			}else{
+				console.log("login ok!")
+				localStorage.setItem("session_token", response.data.token)
+				$location.path("/cliente")
 			}
+			
+			
+		}).catch(function(response) {
+			
 		})
 	}
 	

@@ -1,4 +1,4 @@
-angular.module("livraria.admin").controller("VisualizarAtualizarLivroController", function($scope, $stateParams, adminService) {
+angular.module("livraria.admin").controller("VisualizarAtualizarLivroController", function($scope, $location, $stateParams, adminService) {
 	
 	var livroId = $stateParams.livroId
 	$scope.mensagem_nao_encontrado = null
@@ -33,9 +33,30 @@ angular.module("livraria.admin").controller("VisualizarAtualizarLivroController"
 		adminService.atualizarLivro($scope.livro)
 		.then(function(response) {
 			alert("Livro Atualizado com Sucesso!")
+			$location.path("/admin/livro")
 		}).catch(function(response) {
 			alert("ERROR! " + response.data.error + " (" + response.data.status + ")")
 		})
 	}
+	
+	
+	var setarImagemB64 = function() {
+		$scope.mensagem = "Anexando imagem!"
+		var file = document.querySelector('#foto').files[0];
+		var reader = new FileReader()
+		
+		reader.onloadend = function() {
+			$scope.$apply(function($scope) {
+				$scope.livro.foto = reader.result
+				$scope.mensagem = "Imagem Pronta!"
+			})
+		}
+		
+		if(file){
+			reader.readAsDataURL(file)
+		}
+	}
+		
+	angular.element(document.querySelector('#foto')).on("change", setarImagemB64)
 	
 })

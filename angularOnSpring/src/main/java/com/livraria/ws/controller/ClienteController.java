@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,7 +24,7 @@ import com.livraria.model.Cliente;
 import com.livraria.model.ClienteLoginResponse;
 import com.livraria.ws.repository.ClienteRepository;
 import com.livraria.ws.service.ClienteService;
-
+@CrossOrigin
 @RestController
 @RequestMapping("/api/cliente")
 public class ClienteController {

@@ -20,7 +20,26 @@ angular.module("livraria.admin").controller("CadastroLivroController", function(
 			alert("ERROR! " + response.data.error + " (" + response.data.status + ")")
 		});
 		
-		
 	}
+	
+	
+	var setarImagemB64 = function() {
+		$scope.mensagem = "Anexando imagem!"
+		var file = document.querySelector('#foto').files[0];
+		var reader = new FileReader()
+		
+		reader.onloadend = function() {
+			$scope.$apply(function($scope) {
+				$scope.livro.foto = reader.result
+				$scope.mensagem = "Imagem Pronta!"
+			})
+		}
+		
+		if(file){
+			reader.readAsDataURL(file)
+		}
+	}
+		
+	angular.element(document.querySelector('#foto')).on("change", setarImagemB64)
 	
 })

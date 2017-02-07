@@ -24,13 +24,19 @@ public class TokenFilter extends GenericFilterBean{
 		String headerAuthorization = req.getHeader("Authorization");
 		
 		String atrAdmin = req.getHeader("admin");
-		Boolean isAdmin = atrAdmin.equals("true") ? true : false;
+		Boolean isAdmin;
+		try {
+			isAdmin = atrAdmin.equals("true") ? true : false;
+		} catch (Exception e) {
+			isAdmin = true;
+		}
 		
 		String method = req.getMethod();	
 		String requestUri = req.getRequestURI();
 		
 		
-		if(requestUri.equals("/api/cliente/login") || requestUri.equals("/api/cliente/")  && method.equals("POST")){
+		
+		if(requestUri.substring(0, 8).equals("/api/ec/") || requestUri.equals("/api/cliente/login") || requestUri.equals("/api/cliente/")  && method.equals("POST")){
 			//Login ou Cadastro Pelo Filtro
 			chain.doFilter(request, response);
 			

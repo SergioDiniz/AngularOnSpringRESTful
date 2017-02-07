@@ -57,7 +57,7 @@ public class ClienteService {
 	public ResponseEntity<ClienteLoginResponse> login(String email, String senha) throws ServletException{
 		
 		if(email == null || senha == null){
-			return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+			return new ResponseEntity<>(HttpStatus.PARTIAL_CONTENT);
 //			throw new ServletException("Email e Senha Obrigatorios!");
 		}
 		

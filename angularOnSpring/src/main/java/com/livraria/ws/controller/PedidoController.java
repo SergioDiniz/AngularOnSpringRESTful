@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,7 +22,7 @@ import com.livraria.ws.service.LivroService;
 import com.livraria.ws.service.PedidoService;
 
 import ch.qos.logback.core.net.SyslogOutputStream;
-
+@CrossOrigin
 @RestController
 @RequestMapping("/api/pedidos")
 public class PedidoController {

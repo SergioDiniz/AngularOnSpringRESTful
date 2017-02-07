@@ -10,6 +10,10 @@ public class ClienteLoginResponse {
 		this.token = token;
 	}
 	
+	public ClienteLoginResponse() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public String getNome() {
 		return nome;
 	}

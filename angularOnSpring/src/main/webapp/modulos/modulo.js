@@ -26,13 +26,14 @@ angular.module('livraria', argumentos)
 			
 		} else if(rotasPermiticasClienteLocado.indexOf($location.path()) == -1 && rotasAdmin.indexOf($location.path()) == -1 
 				|| token == null && rotasAdmin.indexOf($location.path()) == -1){
-			console.log("Cliente Logado tentando acessar rota não permitida!")
+			
 			
 			var inicioDaRota = $location.path().slice(0, 6)
 			
 			if(inicioDaRota == '/admin'){
 				$location.path("/admin")
 			}else{
+				
 				if($location.path() == '/cadastro'){
 					$location.path("/cadastro")
 				} else {
