@@ -1,6 +1,8 @@
 # AngularOnSpringRESTful
 Desenvolvendo projeto do curso: AngularJS e Spring RESTful - JavaAvançadoCursos
 
+Sistema hospedado no Heroku: [livraria-as.herokuapp.com](livraria-as.herokuapp.com)
+
 ## Login
 ![](/img/login.png)
 
